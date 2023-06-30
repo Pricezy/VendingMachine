@@ -6,11 +6,16 @@ public class Item {
     private double price;
     private int calories;
     private int quantity;
+
     // limit items to 20
     public Item(String name, double price, int calories, int quantity) {
         this.name = name;
         this.price = price;
         this.calories = calories;
+        this.quantity = quantity;
+    }
+
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -26,13 +31,8 @@ public class Item {
         return this.calories;
     }
 
-    public int getQuantiy() {
+    public int getQuantity() {
         return this.quantity;
     }
 
-
-    
-    
-        
-    
 }

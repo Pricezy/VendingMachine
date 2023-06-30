@@ -1,32 +1,67 @@
-import java.util.*;
-
 package com.main;
 
-import com.vendingmachine;
+import java.util.*;
+
+import com.vendingmachine.VendingMachine;
+import com.itemslot.*;
+
 public class main {
-
-
     public static void main(String[] args) {
-        System.out.println("Welcome to Vending Machine Factory");
-        System.out.println("Choose an action you want to do:");
-        System.out.println("1. Create a Vending Machine");
-        System.out.println("2. Test a Vending Machine");
-        System.out.println("3. Exit the program");
+        VendingMachine vendingMachine = new VendingMachine();
 
-        Scanner sc = new Scanner(System.in);
-        VendingMachine v = new VendingMachine();
-        int nChoice = sc.nextInt();
-        switch (nChoice) {
-            case 1:
-                
-                break;
+        // Add item slots
+        vendingMachine.addItemSlot(new Item("Soda", 20.0, 5));
+        vendingMachine.addItemSlot(new Item("Chips", 15.0, 8));
+        vendingMachine.addItemSlot(new Item("Candy", 10.0, 12));
 
-            case 2:
+        // Add denominations
+        vendingMachine.addDenomination(1);
+        vendingMachine.addDenomination(5);
+        vendingMachine.addDenomination(10);
+        vendingMachine.addDenomination(20);
+        vendingMachine.addDenomination(50);
+        vendingMachine.addDenomination(100);
+        vendingMachine.addDenomination(500);
+        vendingMachine.addDenomination(1000);
 
-                break;
-            
-            
-        }
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("==== Vending Machine Menu ====");
+            System.out.println("1. Purchase Item");
+            System.out.println("2. Restock Item");
+            System.out.println("3. View Item Slots");
+            System.out.println("4. View Cash Summary");
+            System.out.println("0. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
 
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter item index: ");
+                    int itemIndex = scanner.nextInt();
+                    vendingMachine.purchaseItem(itemIndex - 1);
+                    break;
+                case 2:
+                    System.out.println("Enter item index: ");
+                    int restockIndex = scanner.nextInt();
+                    System.out.println("Enter quantity: ");
+                    int restockQuantity = scanner.nextInt();
+                    vendingMachine.restockItem(restockIndex - 1, restockQuantity);
+                    break;
+                case 3:
+                    vendingMachine.printItemSlots();
+                    break;
+                case 4:
+                    vendingMachine.printCashSummary();
+                    break;
+                case 0:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+            System.out.println();
+        } while (choice != 0);
     }
 }
