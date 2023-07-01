@@ -5,14 +5,14 @@ import java.util.*;
 import com.vendingmachine.VendingMachine;
 import com.itemslot.*;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         VendingMachine vendingMachine = new VendingMachine();
 
         // Add item slots
-        vendingMachine.addItemSlot(new Item("Soda", 20.0, 5));
-        vendingMachine.addItemSlot(new Item("Chips", 15.0, 8));
-        vendingMachine.addItemSlot(new Item("Candy", 10.0, 12));
+        vendingMachine.addItemSlot(new Item("Soda", 20.0, 200, 5));
+        vendingMachine.addItemSlot(new Item("Chips", 15.0, 100, 8));
+        vendingMachine.addItemSlot(new Item("Candy", 10.0, 150, 12));
 
         // Add denominations
         vendingMachine.addDenomination(1);
