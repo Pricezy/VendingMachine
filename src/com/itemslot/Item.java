@@ -15,24 +15,75 @@ public class Item {
         this.quantity = quantity;
     }
 
+    /**
+     * sets the price of an item
+     * 
+     * @param price
+     */
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    /**
+     * sets the quantity of an item
+     * 
+     * @param quantity
+     */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
+    /**
+     * gets the name of an item
+     * 
+     * @returns name
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * gets the price of an item
+     * 
+     * @returns price
+     */
     public double getPrice() {
         return this.price;
     }
 
+    /**
+     * gets the calories of an item
+     * 
+     * @returns calories
+     */
     public int getCalories() {
         return this.calories;
     }
 
+    /**
+     * gets the quantity of an item
+     * 
+     * @returns quantity
+     */
     public int getQuantity() {
         return this.quantity;
     }
 
+    /**
+     * sets the calories of an item
+     * 
+     * @param calories
+     */
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    /**
+     * sets the name of an item
+     * 
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 }
