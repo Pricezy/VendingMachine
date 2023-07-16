@@ -1,4 +1,4 @@
-gipackage com.vendingmachine;
+package com.vendingmachine;
 
 import java.util.*;
 
