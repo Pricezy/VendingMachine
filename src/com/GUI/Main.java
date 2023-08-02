@@ -4,10 +4,10 @@
  */
 package com.GUI;
 
-import com.cash;
-import com.vendingmachine.*;
+import com.cash.*;
 import com.itemslot.*;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 /**
  *
  * @author paren
@@ -15,14 +15,25 @@ import java.util.ArrayList;
 public class Main extends javax.swing.JFrame {
     
     private ArrayList<Item> itemSlots;
+    private ArrayList<Item> itemBought;
     private Cash cash;
+    private Cash ownCash;
     private boolean isRegularCreated = false;
     private boolean isSpecialCreated = false;
+    private boolean isMayonnaiseBought = false;
+    private boolean isMustardBought = false;
+    private boolean isCatsupBought = false;
     private String strName = "";
     private double dPrice = 0;
+    private double totalAmount = 0;
     private int nCal = 0;
-    private int nQuan = 0;
-    VendingMachine vendingMachine = new VendingMachine();
+    private int nItemQty = 0;
+    private int nCashQty = 0;
+    private int nCash = 0;
+    private int totalSales = 0;
+    private int nItemBought = 0;
+    private int j = -1;
+    private int i = -1;
     /**
      * Creates new form NewJFrame
      */
@@ -30,9 +41,12 @@ public class Main extends javax.swing.JFrame {
         initComponents();  
         RegularSpecial.setVisible(false);
         Regular.setVisible(false);
+        Special.setVisible(false);
         Feature.setVisible(false);
-        this.itemSlots = new ArrayList<>(25);
-        cash = new Cash();
+        MainMenu.setVisible(true);
+        MaintenanceSpecial.setVisible(false);
+        MaintenanceRegular.setVisible(false);
+        List.setVisible(false);
     }
 
     /**
@@ -44,68 +58,304 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Feature = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        MainMenu = new javax.swing.JPanel();
+        List = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        buttonList = new javax.swing.JButton();
+        MainMenu = new javax.swing.JPanel();
+        labelVending = new javax.swing.JLabel();
+        buttonCreate = new javax.swing.JButton();
+        buttonTest = new javax.swing.JButton();
+        buttonExit = new javax.swing.JButton();
+        labelWelcome = new javax.swing.JLabel();
+        Feature = new javax.swing.JPanel();
+        labelChoose = new javax.swing.JLabel();
+        buttonTestVendingFeatures = new javax.swing.JButton();
+        buttonTestMainteFeatures = new javax.swing.JButton();
+        buttonBackFeature = new javax.swing.JButton();
         RegularSpecial = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        buttonCreateSpec = new javax.swing.JButton();
+        labelChooseVM = new javax.swing.JLabel();
+        buttonCreateReg = new javax.swing.JButton();
+        buttonBackCreate = new javax.swing.JButton();
         Regular = new javax.swing.JPanel();
-        jButton23 = new javax.swing.JButton();
-        lQuan = new javax.swing.JLabel();
-        jButton24 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        lPrice = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        lCal = new javax.swing.JLabel();
-        lName = new javax.swing.JLabel();
+        buttonRCrackers = new javax.swing.JButton();
+        labelQty = new javax.swing.JLabel();
+        buttonRBurgerPatty = new javax.swing.JButton();
+        labelAdd = new javax.swing.JLabel();
+        buttonRHotdog = new javax.swing.JButton();
+        buttonRP1 = new javax.swing.JButton();
+        buttonSkittle = new javax.swing.JButton();
+        buttonRP2 = new javax.swing.JButton();
+        buttonFitbar = new javax.swing.JButton();
+        buttonRP10 = new javax.swing.JButton();
+        buttonChocolate = new javax.swing.JButton();
+        buttonRP20 = new javax.swing.JButton();
+        buttonIcedTea = new javax.swing.JButton();
+        buttonRP50 = new javax.swing.JButton();
+        buttonWater = new javax.swing.JButton();
+        buttonRP100 = new javax.swing.JButton();
+        buttonSoda = new javax.swing.JButton();
+        labelPrice = new javax.swing.JLabel();
+        labelRegular = new javax.swing.JLabel();
+        labelCalories = new javax.swing.JLabel();
+        labelName = new javax.swing.JLabel();
+        buttonRPIncrease = new javax.swing.JButton();
+        buttonRPDecrease = new javax.swing.JButton();
+        labelCashQty = new javax.swing.JLabel();
+        labelTotal = new javax.swing.JLabel();
+        buttonRAdd = new javax.swing.JButton();
+        buttonRBuy = new javax.swing.JButton();
+        labelBuy = new javax.swing.JLabel();
+        labelChange = new javax.swing.JLabel();
+        labelAllP = new javax.swing.JLabel();
+        buttonBackRegular = new javax.swing.JButton();
+        buttonRGetChange = new javax.swing.JButton();
+        Special = new javax.swing.JPanel();
+        buttonHotdog = new javax.swing.JButton();
+        labelSQty = new javax.swing.JLabel();
+        buttonBurgerPatty = new javax.swing.JButton();
+        buttonSAddMoney = new javax.swing.JLabel();
+        buttonCrackers = new javax.swing.JButton();
+        buttonSP1 = new javax.swing.JButton();
+        buttonMustard = new javax.swing.JButton();
+        buttonSP5 = new javax.swing.JButton();
+        buttonCatsup = new javax.swing.JButton();
+        buttonSP10 = new javax.swing.JButton();
+        buttonMayonnaise = new javax.swing.JButton();
+        buttonSP20 = new javax.swing.JButton();
+        buttonSpecIcedTea = new javax.swing.JButton();
+        buttonSP50 = new javax.swing.JButton();
+        buttonSpecWater = new javax.swing.JButton();
+        buttonSP100 = new javax.swing.JButton();
+        buttonSpecSoda = new javax.swing.JButton();
+        labelSPrice = new javax.swing.JLabel();
+        labelRegular1 = new javax.swing.JLabel();
+        labelSCalories = new javax.swing.JLabel();
+        labelSName = new javax.swing.JLabel();
+        buttonSPIncrease = new javax.swing.JButton();
+        buttonSPDecrease = new javax.swing.JButton();
+        labelSCashQty = new javax.swing.JLabel();
+        labelSTotal = new javax.swing.JLabel();
+        buttonSAdd = new javax.swing.JButton();
+        buttonSBuy = new javax.swing.JButton();
+        labelSBuy = new javax.swing.JLabel();
+        labelSChange = new javax.swing.JLabel();
+        labelSAllP = new javax.swing.JLabel();
+        buttonBackRegular1 = new javax.swing.JButton();
+        buttonHotdogSandwich = new javax.swing.JButton();
+        buttonHamburger = new javax.swing.JButton();
+        buttonFishNCrackers = new javax.swing.JButton();
+        buttonSGetChange = new javax.swing.JButton();
+        MaintenanceSpecial = new javax.swing.JPanel();
+        labelMSQty = new javax.swing.JLabel();
+        labelMSReplenish = new javax.swing.JLabel();
+        buttonMSP1 = new javax.swing.JButton();
+        buttonMSP5 = new javax.swing.JButton();
+        buttonMSP10 = new javax.swing.JButton();
+        buttonMSP20 = new javax.swing.JButton();
+        buttonMSP50 = new javax.swing.JButton();
+        buttonMSP100 = new javax.swing.JButton();
+        labelMSPrice = new javax.swing.JLabel();
+        labelMainteSpecial = new javax.swing.JLabel();
+        labelMSCalories = new javax.swing.JLabel();
+        labelMSName = new javax.swing.JLabel();
+        buttonMSPAdd = new javax.swing.JButton();
+        buttonMSPMinus = new javax.swing.JButton();
+        labelMSCashQty = new javax.swing.JLabel();
+        buttonMSPGetMoney = new javax.swing.JButton();
+        labelMSPAll = new javax.swing.JLabel();
+        buttonBackSMainte = new javax.swing.JButton();
+        buttonMSChangePriceAdd = new javax.swing.JButton();
+        buttonMSChangePriceMinus = new javax.swing.JButton();
+        buttonMSChangeQtyAdd = new javax.swing.JButton();
+        buttonMSChangeQtyMinus = new javax.swing.JButton();
+        buttonMSHotdog = new javax.swing.JButton();
+        buttonMSBurgerPatty = new javax.swing.JButton();
+        buttonMSCrackers = new javax.swing.JButton();
+        buttonMSMayonnaise = new javax.swing.JButton();
+        buttonMSCatsup = new javax.swing.JButton();
+        buttonMSMustard = new javax.swing.JButton();
+        buttonMSpecIcedTea = new javax.swing.JButton();
+        buttonMSpecWater = new javax.swing.JButton();
+        buttonMSpecSoda = new javax.swing.JButton();
+        buttonMFishNCrackers = new javax.swing.JButton();
+        buttonMHamburger = new javax.swing.JButton();
+        buttonMHotdogSandwich = new javax.swing.JButton();
+        buttonMSLogs = new javax.swing.JButton();
+        MaintenanceRegular = new javax.swing.JPanel();
+        buttonMRCrackers = new javax.swing.JButton();
+        labelMRQty = new javax.swing.JLabel();
+        buttonMRBurgerPatty = new javax.swing.JButton();
+        labelMRAdd = new javax.swing.JLabel();
+        buttonMRHotdog = new javax.swing.JButton();
+        buttonMRP1 = new javax.swing.JButton();
+        buttonMRSkittle = new javax.swing.JButton();
+        buttonMRP5 = new javax.swing.JButton();
+        buttonMRFitbar = new javax.swing.JButton();
+        buttonMRP10 = new javax.swing.JButton();
+        buttonMRChocolate = new javax.swing.JButton();
+        buttonMRP20 = new javax.swing.JButton();
+        buttonMRIcedTea = new javax.swing.JButton();
+        buttonMRP50 = new javax.swing.JButton();
+        buttonMRWater = new javax.swing.JButton();
+        buttonMRP100 = new javax.swing.JButton();
+        buttonMRSoda = new javax.swing.JButton();
+        labelMRPrice = new javax.swing.JLabel();
+        labelMainteRegular = new javax.swing.JLabel();
+        labelMRCalories = new javax.swing.JLabel();
+        labelMRName = new javax.swing.JLabel();
+        buttonMRPAdd = new javax.swing.JButton();
+        buttonMRPMinus = new javax.swing.JButton();
+        labelMRCashQty = new javax.swing.JLabel();
+        labelMRPAll = new javax.swing.JLabel();
+        buttonBackMainte = new javax.swing.JButton();
+        buttonMRChangePriceAdd = new javax.swing.JButton();
+        buttonMRChangePriceMinus = new javax.swing.JButton();
+        buttonMRChangeQtyAdd = new javax.swing.JButton();
+        buttonMRChangeQtyMinus = new javax.swing.JButton();
+        buttonGetMoney = new javax.swing.JButton();
+        buttonMRLogs = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        Feature.setPreferredSize(new java.awt.Dimension(400, 600));
+        jScrollPane1.setViewportView(jList1);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Choose a vending machine feature:");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setText("Transaction History");
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton7.setText("Test the vending machine features");
-        jButton7.setToolTipText("");
-        jButton7.setActionCommand("");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonList.setText("Go Back");
+        buttonList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                buttonListActionPerformed(evt);
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton8.setText("Test the maintenance features");
-        jButton8.setToolTipText("");
-        jButton8.setActionCommand("");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout ListLayout = new javax.swing.GroupLayout(List);
+        List.setLayout(ListLayout);
+        ListLayout.setHorizontalGroup(
+            ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonList)
+                .addContainerGap())
+        );
+        ListLayout.setVerticalGroup(
+            ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonList)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+
+        labelVending.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
+        labelVending.setText("Vending Machine");
+
+        buttonCreate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonCreate.setText("Create a Vending Machine");
+        buttonCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                buttonCreateActionPerformed(evt);
+            }
+        });
+
+        buttonTest.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonTest.setText("Test the Vending Machine");
+        buttonTest.setActionCommand("");
+        buttonTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTestActionPerformed(evt);
+            }
+        });
+
+        buttonExit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonExit.setText("Exit");
+        buttonExit.setActionCommand("");
+        buttonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonExitActionPerformed(evt);
+            }
+        });
+
+        labelWelcome.setText("Welcome! Create a vending machine that you want.");
+
+        javax.swing.GroupLayout MainMenuLayout = new javax.swing.GroupLayout(MainMenu);
+        MainMenu.setLayout(MainMenuLayout);
+        MainMenuLayout.setHorizontalGroup(
+            MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelVending, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
+                        .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)))
+                .addGap(53, 53, 53))
+            .addGroup(MainMenuLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(labelWelcome)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        MainMenuLayout.setVerticalGroup(
+            MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainMenuLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(labelVending)
+                .addGap(33, 33, 33)
+                .addComponent(buttonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(labelWelcome)
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+
+        Feature.setPreferredSize(new java.awt.Dimension(400, 600));
+
+        labelChoose.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelChoose.setText("Choose a vending machine feature:");
+
+        buttonTestVendingFeatures.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonTestVendingFeatures.setText("Test the vending machine features");
+        buttonTestVendingFeatures.setToolTipText("");
+        buttonTestVendingFeatures.setActionCommand("");
+        buttonTestVendingFeatures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTestVendingFeaturesActionPerformed(evt);
+            }
+        });
+
+        buttonTestMainteFeatures.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonTestMainteFeatures.setText("Test the maintenance features");
+        buttonTestMainteFeatures.setToolTipText("");
+        buttonTestMainteFeatures.setActionCommand("");
+        buttonTestMainteFeatures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTestMainteFeaturesActionPerformed(evt);
+            }
+        });
+
+        buttonBackFeature.setText("Go Back");
+        buttonBackFeature.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackFeatureActionPerformed(evt);
             }
         });
 
@@ -113,119 +363,62 @@ public class Main extends javax.swing.JFrame {
         Feature.setLayout(FeatureLayout);
         FeatureLayout.setHorizontalGroup(
             FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeatureLayout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+            .addGroup(FeatureLayout.createSequentialGroup()
+                .addContainerGap(73, Short.MAX_VALUE)
                 .addGroup(FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeatureLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(7, 7, 7)))
-                .addGap(70, 70, 70))
+                        .addGroup(FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buttonTestMainteFeatures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonTestVendingFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelChoose))
+                        .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeatureLayout.createSequentialGroup()
+                        .addComponent(buttonBackFeature)
+                        .addContainerGap())))
         );
         FeatureLayout.setVerticalGroup(
             FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FeatureLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(buttonBackFeature)
+                .addGap(69, 69, 69)
+                .addComponent(labelChoose)
+                .addGap(58, 58, 58)
+                .addComponent(buttonTestVendingFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(479, Short.MAX_VALUE))
-        );
-
-        jLabel1.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
-        jLabel1.setText("Vending Machine");
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("Create a Vending Machine");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("Test the Vending Machine");
-        jButton2.setActionCommand("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setText("Exit");
-        jButton3.setActionCommand("");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Welcome! Create a vending machine that you want.");
-
-        javax.swing.GroupLayout MainMenuLayout = new javax.swing.GroupLayout(MainMenu);
-        MainMenu.setLayout(MainMenuLayout);
-        MainMenuLayout.setHorizontalGroup(
-            MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainMenuLayout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(47, 47, 47))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
-                        .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(72, 72, 72))))
-            .addGroup(MainMenuLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        MainMenuLayout.setVerticalGroup(
-            MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainMenuLayout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jLabel3)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addComponent(buttonTestMainteFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(438, Short.MAX_VALUE))
         );
 
         RegularSpecial.setPreferredSize(new java.awt.Dimension(400, 600));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setText("Create a Special Vending Machine");
-        jButton4.setToolTipText("");
-        jButton4.setActionCommand("");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonCreateSpec.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonCreateSpec.setText("Create a Special Vending Machine");
+        buttonCreateSpec.setToolTipText("");
+        buttonCreateSpec.setActionCommand("");
+        buttonCreateSpec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                buttonCreateSpecActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Choose a vending machine you want to create:");
+        labelChooseVM.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelChooseVM.setText("Choose a vending machine you want to create:");
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setText("Create a Regular Vending Machine");
-        jButton5.setToolTipText("");
-        jButton5.setActionCommand("");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonCreateReg.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonCreateReg.setText("Create a Regular Vending Machine");
+        buttonCreateReg.setToolTipText("");
+        buttonCreateReg.setActionCommand("");
+        buttonCreateReg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                buttonCreateRegActionPerformed(evt);
+            }
+        });
+
+        buttonBackCreate.setText("Go Back");
+        buttonBackCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackCreateActionPerformed(evt);
             }
         });
 
@@ -234,156 +427,218 @@ public class Main extends javax.swing.JFrame {
         RegularSpecialLayout.setHorizontalGroup(
             RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegularSpecialLayout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
                 .addGroup(RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularSpecialLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(42, 42, 42))
+                    .addComponent(labelChooseVM, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularSpecialLayout.createSequentialGroup()
                         .addGroup(RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(63, 63, 63))))
+                            .addComponent(buttonCreateSpec, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonCreateReg, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularSpecialLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonBackCreate)
+                .addContainerGap())
         );
         RegularSpecialLayout.setVerticalGroup(
             RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegularSpecialLayout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(jLabel2)
+                .addContainerGap()
+                .addComponent(buttonBackCreate)
+                .addGap(98, 98, 98)
+                .addComponent(labelChooseVM)
                 .addGap(31, 31, 31)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonCreateReg, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(434, Short.MAX_VALUE))
+                .addComponent(buttonCreateSpec, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         Regular.setBackground(new java.awt.Color(204, 255, 204));
         Regular.setForeground(new java.awt.Color(153, 255, 51));
         Regular.setPreferredSize(new java.awt.Dimension(400, 600));
 
-        jButton23.setText("Chips");
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
+        buttonRCrackers.setText("Crackers");
+        buttonRCrackers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
+                buttonRCrackersActionPerformed(evt);
             }
         });
 
-        lQuan.setText("Quantity: " + nQuan);
+        labelQty.setText("No. of items left: " + nItemQty
+        );
 
-        jButton24.setText("Candy");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        buttonRBurgerPatty.setText("Burger Patty");
+        buttonRBurgerPatty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                buttonRBurgerPattyActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("Add Money:");
+        labelAdd.setText("Add Money:");
 
-        jButton25.setText("Gum");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        buttonRHotdog.setText("Hotdog");
+        buttonRHotdog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                buttonRHotdogActionPerformed(evt);
             }
         });
 
-        jButton26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton26.setText("1");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
+        buttonRP1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonRP1.setText("1");
+        buttonRP1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
+                buttonRP1ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Skittle");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonSkittle.setText("Skittle");
+        buttonSkittle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                buttonSkittleActionPerformed(evt);
             }
         });
 
-        jButton27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton27.setText("5");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        buttonRP2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonRP2.setText("5");
+        buttonRP2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                buttonRP2ActionPerformed(evt);
             }
         });
 
-        jButton28.setText("Fitbar");
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
+        buttonFitbar.setText("Fitbar");
+        buttonFitbar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
+                buttonFitbarActionPerformed(evt);
             }
         });
 
-        jButton29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton29.setText("10");
-        jButton29.addActionListener(new java.awt.event.ActionListener() {
+        buttonRP10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonRP10.setText("10");
+        buttonRP10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton29ActionPerformed(evt);
+                buttonRP10ActionPerformed(evt);
             }
         });
 
-        jButton30.setText("Chocolate");
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
+        buttonChocolate.setText("Chocolate");
+        buttonChocolate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
+                buttonChocolateActionPerformed(evt);
             }
         });
 
-        jButton31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton31.setText("20");
-        jButton31.addActionListener(new java.awt.event.ActionListener() {
+        buttonRP20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonRP20.setText("20");
+        buttonRP20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton31ActionPerformed(evt);
+                buttonRP20ActionPerformed(evt);
             }
         });
 
-        jButton32.setText("Iced Tea");
-        jButton32.addActionListener(new java.awt.event.ActionListener() {
+        buttonIcedTea.setText("Iced Tea");
+        buttonIcedTea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton32ActionPerformed(evt);
+                buttonIcedTeaActionPerformed(evt);
             }
         });
 
-        jButton33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton33.setText("50");
-        jButton33.addActionListener(new java.awt.event.ActionListener() {
+        buttonRP50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonRP50.setText("50");
+        buttonRP50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton33ActionPerformed(evt);
+                buttonRP50ActionPerformed(evt);
             }
         });
 
-        jButton34.setText("Water");
-        jButton34.addActionListener(new java.awt.event.ActionListener() {
+        buttonWater.setText("Water");
+        buttonWater.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton34ActionPerformed(evt);
+                buttonWaterActionPerformed(evt);
             }
         });
 
-        jButton35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton35.setText("100");
-        jButton35.addActionListener(new java.awt.event.ActionListener() {
+        buttonRP100.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonRP100.setText("100");
+        buttonRP100.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton35ActionPerformed(evt);
+                buttonRP100ActionPerformed(evt);
             }
         });
 
-        jButton36.setText("Soda");
-        jButton36.addActionListener(new java.awt.event.ActionListener() {
+        buttonSoda.setText("Soda");
+        buttonSoda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton36ActionPerformed(evt);
+                buttonSodaActionPerformed(evt);
             }
         });
 
-        lPrice.setText("Price: "+dPrice);
+        labelPrice.setText("Price: "+dPrice);
 
-        jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel11.setText("Regular Vending Machine");
+        labelRegular.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        labelRegular.setText("Regular Vending Machine");
 
-        lCal.setText("Calories: "+nCal);
+        labelCalories.setText("Calories: "+nCal);
 
-        lName.setText("Name: ");
+        labelName.setText("Name: ");
+
+        buttonRPIncrease.setText("+");
+        buttonRPIncrease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRPIncreaseActionPerformed(evt);
+            }
+        });
+
+        buttonRPDecrease.setText("-");
+        buttonRPDecrease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRPDecreaseActionPerformed(evt);
+            }
+        });
+
+        labelCashQty.setText("Quantity: "+nCashQty
+        );
+
+        labelTotal.setText("Total Amount: "+totalAmount);
+        labelTotal.setToolTipText("");
+
+        buttonRAdd.setText("Add Money");
+        buttonRAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRAddActionPerformed(evt);
+            }
+        });
+
+        buttonRBuy.setText("Buy Item");
+        buttonRBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRBuyActionPerformed(evt);
+            }
+        });
+
+        labelBuy.setText("You haven't bought anything");
+
+        labelChange.setText("Your change is: ");
+        labelChange.setToolTipText("");
+        labelChange.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        labelAllP.setText("₱ 1:  ₱ 5: ₱ 10: ₱ 20: ₱50: ₱ 100:  ");
+
+        buttonBackRegular.setText("Go Back");
+        buttonBackRegular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackRegularActionPerformed(evt);
+            }
+        });
+
+        buttonRGetChange.setText("Get Change");
+        buttonRGetChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRGetChangeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout RegularLayout = new javax.swing.GroupLayout(Regular);
         Regular.setLayout(RegularLayout);
@@ -392,101 +647,1294 @@ public class Main extends javax.swing.JFrame {
             .addGroup(RegularLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lPrice)
-                    .addComponent(lCal)
-                    .addComponent(lQuan)
-                    .addComponent(lName))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(44, 44, 44))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
-                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton33, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
-            .addGroup(RegularLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegularLayout.createSequentialGroup()
-                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(RegularLayout.createSequentialGroup()
-                                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(RegularLayout.createSequentialGroup()
+                                        .addGap(23, 23, 23)
+                                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(buttonRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(RegularLayout.createSequentialGroup()
+                                                .addComponent(buttonFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(RegularLayout.createSequentialGroup()
+                                                .addComponent(buttonRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(RegularLayout.createSequentialGroup()
+                                                .addComponent(buttonWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(RegularLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(labelRegular)))
+                                .addGap(0, 29, Short.MAX_VALUE))
                             .addGroup(RegularLayout.createSequentialGroup()
-                                .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelBuy)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(RegularLayout.createSequentialGroup()
-                                .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel11))
-                .addContainerGap(35, Short.MAX_VALUE))
+                                .addComponent(labelChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelCalories)
+                            .addComponent(labelPrice)
+                            .addComponent(labelName)
+                            .addComponent(labelQty)
+                            .addComponent(buttonRBuy))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                    .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                            .addComponent(buttonRP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(RegularLayout.createSequentialGroup()
+                                            .addComponent(buttonRP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(buttonRPDecrease)
+                                        .addComponent(buttonRPIncrease)))
+                                .addGroup(RegularLayout.createSequentialGroup()
+                                    .addGap(112, 112, 112)
+                                    .addComponent(labelTotal))
+                                .addGroup(RegularLayout.createSequentialGroup()
+                                    .addComponent(buttonRAdd)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(buttonRGetChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                .addComponent(labelCashQty)
+                                .addGap(142, 142, 142))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                .addComponent(labelAdd)
+                                .addGap(66, 66, 66)))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                .addComponent(buttonBackRegular)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                .addComponent(labelAllP)
+                                .addGap(32, 32, 32))))))
         );
         RegularLayout.setVerticalGroup(
             RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegularLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel11)
-                .addGap(47, 47, 47)
+                .addContainerGap()
+                .addComponent(buttonBackRegular)
+                .addGap(14, 14, 14)
+                .addComponent(labelRegular)
+                .addGap(32, 32, 32)
                 .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(buttonRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61)
+                    .addComponent(buttonSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonWater, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
                 .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(RegularLayout.createSequentialGroup()
-                        .addComponent(jLabel9)
+                        .addComponent(labelName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton26)
-                            .addComponent(jButton27)
-                            .addComponent(jButton29))
+                        .addComponent(labelPrice)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton31)
-                            .addComponent(jButton33)
-                            .addComponent(jButton35))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(labelCalories)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelQty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonRBuy))
                     .addGroup(RegularLayout.createSequentialGroup()
-                        .addComponent(lName)
+                        .addComponent(labelAdd)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonRP1)
+                            .addComponent(buttonRP2)
+                            .addComponent(buttonRP10)
+                            .addComponent(buttonRPIncrease))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonRP20)
+                            .addComponent(buttonRP50)
+                            .addComponent(buttonRP100)
+                            .addComponent(buttonRPDecrease))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lPrice)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lCal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lQuan)
-                        .addGap(393, 393, 393))))
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonRAdd)
+                            .addComponent(buttonRGetChange))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCashQty)
+                            .addComponent(labelTotal))))
+                .addGap(18, 18, 18)
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelBuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelChange))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelAllP)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
-        lPrice.setText("Price: " + dPrice);
-        lPrice.setText("Price: " + dPrice);
+        labelPrice.setText("Price: " + dPrice);
+
+        Special.setBackground(new java.awt.Color(204, 255, 204));
+        Special.setForeground(new java.awt.Color(153, 255, 51));
+        Special.setPreferredSize(new java.awt.Dimension(400, 600));
+
+        buttonHotdog.setText("Crackers");
+        buttonHotdog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonHotdogActionPerformed(evt);
+            }
+        });
+
+        labelSQty.setText("No. of items left: " + nItemQty
+        );
+
+        buttonBurgerPatty.setText("Burger Patty");
+        buttonBurgerPatty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBurgerPattyActionPerformed(evt);
+            }
+        });
+
+        buttonSAddMoney.setText("Add Money:");
+
+        buttonCrackers.setText("Hotdog");
+        buttonCrackers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCrackersActionPerformed(evt);
+            }
+        });
+
+        buttonSP1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonSP1.setText("1");
+        buttonSP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSP1ActionPerformed(evt);
+            }
+        });
+
+        buttonMustard.setText("Mustard");
+        buttonMustard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMustardActionPerformed(evt);
+            }
+        });
+
+        buttonSP5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonSP5.setText("5");
+        buttonSP5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSP5ActionPerformed(evt);
+            }
+        });
+
+        buttonCatsup.setText("Catsup");
+        buttonCatsup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCatsupActionPerformed(evt);
+            }
+        });
+
+        buttonSP10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonSP10.setText("10");
+        buttonSP10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSP10ActionPerformed(evt);
+            }
+        });
+
+        buttonMayonnaise.setText("Mayonnaise");
+        buttonMayonnaise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMayonnaiseActionPerformed(evt);
+            }
+        });
+
+        buttonSP20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonSP20.setText("20");
+        buttonSP20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSP20ActionPerformed(evt);
+            }
+        });
+
+        buttonSpecIcedTea.setText("Iced Tea");
+        buttonSpecIcedTea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSpecIcedTeaActionPerformed(evt);
+            }
+        });
+
+        buttonSP50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonSP50.setText("50");
+        buttonSP50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSP50ActionPerformed(evt);
+            }
+        });
+
+        buttonSpecWater.setText("Water");
+        buttonSpecWater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSpecWaterActionPerformed(evt);
+            }
+        });
+
+        buttonSP100.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonSP100.setText("100");
+        buttonSP100.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSP100ActionPerformed(evt);
+            }
+        });
+
+        buttonSpecSoda.setText("Soda");
+        buttonSpecSoda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSpecSodaActionPerformed(evt);
+            }
+        });
+
+        labelSPrice.setText("Price: "+dPrice);
+
+        labelRegular1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        labelRegular1.setText("Special Vending Machine");
+
+        labelSCalories.setText("Calories: "+nCal);
+
+        labelSName.setText("Name: ");
+
+        buttonSPIncrease.setText("+");
+        buttonSPIncrease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSPIncreaseActionPerformed(evt);
+            }
+        });
+
+        buttonSPDecrease.setText("-");
+        buttonSPDecrease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSPDecreaseActionPerformed(evt);
+            }
+        });
+
+        labelSCashQty.setText("Quantity: "+nCashQty
+        );
+
+        labelSTotal.setText("Total Amount: "+totalAmount);
+        labelSTotal.setToolTipText("");
+
+        buttonSAdd.setText("Add Money");
+        buttonSAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSAddActionPerformed(evt);
+            }
+        });
+
+        buttonSBuy.setText("Buy Item");
+        buttonSBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSBuyActionPerformed(evt);
+            }
+        });
+
+        labelSBuy.setText("You haven't bought anything");
+
+        labelSChange.setText("Your change is: ");
+        labelSChange.setToolTipText("");
+        labelSChange.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        labelSAllP.setText("₱ 1:     ₱ 5:    ₱ 10:    ₱ 20:    ₱ 50:    ₱ 100:  ");
+
+        buttonBackRegular1.setText("Go Back");
+        buttonBackRegular1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackRegular1ActionPerformed(evt);
+            }
+        });
+
+        buttonHotdogSandwich.setText(" HotdogSandwich");
+        buttonHotdogSandwich.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonHotdogSandwichActionPerformed(evt);
+            }
+        });
+
+        buttonHamburger.setText("Hamburger");
+        buttonHamburger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonHamburgerActionPerformed(evt);
+            }
+        });
+
+        buttonFishNCrackers.setText("FishNCrackers");
+        buttonFishNCrackers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonFishNCrackersActionPerformed(evt);
+            }
+        });
+
+        buttonSGetChange.setText("Get Change");
+        buttonSGetChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSGetChangeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SpecialLayout = new javax.swing.GroupLayout(Special);
+        Special.setLayout(SpecialLayout);
+        SpecialLayout.setHorizontalGroup(
+            SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SpecialLayout.createSequentialGroup()
+                                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(SpecialLayout.createSequentialGroup()
+                                        .addGap(23, 23, 23)
+                                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(buttonHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(SpecialLayout.createSequentialGroup()
+                                                .addComponent(buttonCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(SpecialLayout.createSequentialGroup()
+                                                .addComponent(buttonBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(SpecialLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(labelRegular1))
+                                    .addGroup(SpecialLayout.createSequentialGroup()
+                                        .addGap(141, 141, 141)
+                                        .addComponent(buttonSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(buttonSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 29, Short.MAX_VALUE))
+                            .addGroup(SpecialLayout.createSequentialGroup()
+                                .addComponent(labelSBuy)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelSChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelSCalories)
+                            .addComponent(labelSPrice)
+                            .addComponent(labelSName)
+                            .addComponent(labelSQty)
+                            .addComponent(buttonSBuy))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                    .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                            .addComponent(buttonSP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(SpecialLayout.createSequentialGroup()
+                                            .addComponent(buttonSP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(buttonSPDecrease)
+                                        .addComponent(buttonSPIncrease)))
+                                .addGroup(SpecialLayout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(labelSCashQty)
+                                    .addGap(36, 36, 36)
+                                    .addComponent(labelSTotal))
+                                .addGroup(SpecialLayout.createSequentialGroup()
+                                    .addComponent(buttonSAdd)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(buttonSGetChange)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                .addComponent(buttonSAddMoney)
+                                .addGap(66, 66, 66)))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                .addComponent(buttonBackRegular1)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                .addComponent(labelSAllP)
+                                .addGap(16, 16, 16))))))
+            .addGroup(SpecialLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(buttonHotdogSandwich)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        SpecialLayout.setVerticalGroup(
+            SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackRegular1)
+                .addGap(14, 14, 14)
+                .addComponent(labelRegular1)
+                .addGap(32, 32, 32)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonHotdogSandwich, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(SpecialLayout.createSequentialGroup()
+                        .addComponent(labelSName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelSPrice)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelSCalories)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelSQty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonSBuy))
+                    .addGroup(SpecialLayout.createSequentialGroup()
+                        .addComponent(buttonSAddMoney)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonSP1)
+                            .addComponent(buttonSP5)
+                            .addComponent(buttonSP10)
+                            .addComponent(buttonSPIncrease))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonSP20)
+                            .addComponent(buttonSP50)
+                            .addComponent(buttonSP100)
+                            .addComponent(buttonSPDecrease))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonSAdd)
+                            .addComponent(buttonSGetChange))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelSCashQty)
+                            .addComponent(labelSTotal))))
+                .addGap(18, 18, 18)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelSBuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelSChange))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelSAllP)
+                .addContainerGap(126, Short.MAX_VALUE))
+        );
+
+        labelPrice.setText("Price: " + dPrice);
+
+        MaintenanceSpecial.setBackground(new java.awt.Color(204, 255, 204));
+        MaintenanceSpecial.setForeground(new java.awt.Color(153, 255, 51));
+        MaintenanceSpecial.setPreferredSize(new java.awt.Dimension(400, 600));
+
+        labelMSQty.setText("Items left: " + nItemQty
+        );
+
+        labelMSReplenish.setText("Replenish Money:");
+
+        buttonMSP1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMSP1.setText("1");
+        buttonMSP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSP1ActionPerformed(evt);
+            }
+        });
+
+        buttonMSP5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMSP5.setText("5");
+        buttonMSP5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSP5ActionPerformed(evt);
+            }
+        });
+
+        buttonMSP10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMSP10.setText("10");
+        buttonMSP10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSP10ActionPerformed(evt);
+            }
+        });
+
+        buttonMSP20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMSP20.setText("20");
+        buttonMSP20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSP20ActionPerformed(evt);
+            }
+        });
+
+        buttonMSP50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMSP50.setText("50");
+        buttonMSP50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSP50ActionPerformed(evt);
+            }
+        });
+
+        buttonMSP100.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMSP100.setText("100");
+        buttonMSP100.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSP100ActionPerformed(evt);
+            }
+        });
+
+        labelMSPrice.setText("Price: "+dPrice);
+
+        labelMainteSpecial.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        labelMainteSpecial.setText("Maintenance Vending Machine");
+
+        labelMSCalories.setText("Calories: "+nCal);
+
+        labelMSName.setText("Name: ");
+
+        buttonMSPAdd.setText("+");
+        buttonMSPAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSPAddActionPerformed(evt);
+            }
+        });
+
+        buttonMSPMinus.setText("-");
+        buttonMSPMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSPMinusActionPerformed(evt);
+            }
+        });
+
+        labelMSCashQty.setText("Quantity: "+nCashQty
+        );
+
+        buttonMSPGetMoney.setText("Get Money");
+        buttonMSPGetMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSPGetMoneyActionPerformed(evt);
+            }
+        });
+
+        labelMSPAll.setText("₱ 1:     ₱ 5:    ₱ 10:    ₱ 20:    ₱ 50:    ₱ 100:  ");
+
+        buttonBackSMainte.setText("Go Back");
+        buttonBackSMainte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackSMainteActionPerformed(evt);
+            }
+        });
+
+        buttonMSChangePriceAdd.setText("+");
+        buttonMSChangePriceAdd.setToolTipText("");
+        buttonMSChangePriceAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSChangePriceAddActionPerformed(evt);
+            }
+        });
+
+        buttonMSChangePriceMinus.setText("-");
+        buttonMSChangePriceMinus.setToolTipText("");
+        buttonMSChangePriceMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSChangePriceMinusActionPerformed(evt);
+            }
+        });
+
+        buttonMSChangeQtyAdd.setText("+");
+        buttonMSChangeQtyAdd.setToolTipText("");
+        buttonMSChangeQtyAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSChangeQtyAddActionPerformed(evt);
+            }
+        });
+
+        buttonMSChangeQtyMinus.setText("-");
+        buttonMSChangeQtyMinus.setToolTipText("");
+        buttonMSChangeQtyMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSChangeQtyMinusActionPerformed(evt);
+            }
+        });
+
+        buttonMSHotdog.setText("Hotdog");
+        buttonMSHotdog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSHotdogActionPerformed(evt);
+            }
+        });
+
+        buttonMSBurgerPatty.setText("Burger Patty");
+        buttonMSBurgerPatty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSBurgerPattyActionPerformed(evt);
+            }
+        });
+
+        buttonMSCrackers.setText("Crackers");
+        buttonMSCrackers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSCrackersActionPerformed(evt);
+            }
+        });
+
+        buttonMSMayonnaise.setText("Mayonnaise");
+        buttonMSMayonnaise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSMayonnaiseActionPerformed(evt);
+            }
+        });
+
+        buttonMSCatsup.setText("Catsup");
+        buttonMSCatsup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSCatsupActionPerformed(evt);
+            }
+        });
+
+        buttonMSMustard.setText("Mustard");
+        buttonMSMustard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSMustardActionPerformed(evt);
+            }
+        });
+
+        buttonMSpecIcedTea.setText("Iced Tea");
+        buttonMSpecIcedTea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSpecIcedTeaActionPerformed(evt);
+            }
+        });
+
+        buttonMSpecWater.setText("Water");
+        buttonMSpecWater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSpecWaterActionPerformed(evt);
+            }
+        });
+
+        buttonMSpecSoda.setText("Soda");
+        buttonMSpecSoda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSpecSodaActionPerformed(evt);
+            }
+        });
+
+        buttonMFishNCrackers.setText("FishNCrackers");
+        buttonMFishNCrackers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMFishNCrackersActionPerformed(evt);
+            }
+        });
+
+        buttonMHamburger.setText("Hamburger");
+        buttonMHamburger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMHamburgerActionPerformed(evt);
+            }
+        });
+
+        buttonMHotdogSandwich.setText(" HotdogSandwich");
+        buttonMHotdogSandwich.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMHotdogSandwichActionPerformed(evt);
+            }
+        });
+
+        buttonMSLogs.setText("View logs");
+        buttonMSLogs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMSLogsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout MaintenanceSpecialLayout = new javax.swing.GroupLayout(MaintenanceSpecial);
+        MaintenanceSpecial.setLayout(MaintenanceSpecialLayout);
+        MaintenanceSpecialLayout.setHorizontalGroup(
+            MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(buttonBackSMainte)
+                        .addComponent(labelMainteSpecial))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonMSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonMSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonMSMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addComponent(buttonMSCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonMSMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addComponent(buttonMSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonMSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(buttonMSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonMSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addComponent(buttonMHotdogSandwich)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonMFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelMSName)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addComponent(labelMSPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSChangePriceAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSChangePriceMinus))
+                    .addComponent(labelMSCalories)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addComponent(labelMSQty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonMSChangeQtyAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSChangeQtyMinus))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(buttonMSLogs)))
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(labelMSPAll))
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceSpecialLayout.createSequentialGroup()
+                                                .addComponent(buttonMSP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(buttonMSP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(buttonMSP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                                .addComponent(buttonMSP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(buttonMSP5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(buttonMSP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(buttonMSPMinus)
+                                            .addComponent(buttonMSPAdd)))
+                                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelMSCashQty)
+                                            .addComponent(buttonMSPGetMoney))
+                                        .addGap(54, 54, 54)))))
+                        .addGap(0, 31, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceSpecialLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelMSReplenish)
+                        .addGap(87, 87, 87))))
+        );
+        MaintenanceSpecialLayout.setVerticalGroup(
+            MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackSMainte)
+                .addGap(22, 22, 22)
+                .addComponent(labelMainteSpecial)
+                .addGap(18, 18, 18)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMSMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonMSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonMSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonMSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMHotdogSandwich, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(buttonMSChangePriceAdd)
+                                    .addComponent(buttonMSChangePriceMinus)))
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(labelMSPrice))
+                                    .addComponent(labelMSName))
+                                .addGap(7, 7, 7)
+                                .addComponent(labelMSCalories)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(labelMSQty)
+                                    .addComponent(buttonMSChangeQtyAdd)
+                                    .addComponent(buttonMSChangeQtyMinus)))))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(labelMSReplenish)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMSP1)
+                            .addComponent(buttonMSP5)
+                            .addComponent(buttonMSP10)
+                            .addComponent(buttonMSPAdd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMSP20)
+                            .addComponent(buttonMSP50)
+                            .addComponent(buttonMSP100)
+                            .addComponent(buttonMSPMinus))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSPGetMoney)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelMSCashQty)
+                .addGap(24, 24, 24)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelMSPAll)
+                    .addComponent(buttonMSLogs))
+                .addContainerGap(132, Short.MAX_VALUE))
+        );
+
+        labelPrice.setText("Price: " + dPrice);
+
+        MaintenanceRegular.setBackground(new java.awt.Color(204, 255, 204));
+        MaintenanceRegular.setForeground(new java.awt.Color(153, 255, 51));
+        MaintenanceRegular.setPreferredSize(new java.awt.Dimension(400, 600));
+
+        buttonMRCrackers.setText("Crackers");
+        buttonMRCrackers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRCrackersActionPerformed(evt);
+            }
+        });
+
+        labelMRQty.setText("Items left: " + nItemQty
+        );
+
+        buttonMRBurgerPatty.setText("Burger Patty");
+        buttonMRBurgerPatty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRBurgerPattyActionPerformed(evt);
+            }
+        });
+
+        labelMRAdd.setText("Replenish Money:");
+
+        buttonMRHotdog.setText("Hotdog");
+        buttonMRHotdog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRHotdogActionPerformed(evt);
+            }
+        });
+
+        buttonMRP1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMRP1.setText("1");
+        buttonMRP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRP1ActionPerformed(evt);
+            }
+        });
+
+        buttonMRSkittle.setText("Skittle");
+        buttonMRSkittle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRSkittleActionPerformed(evt);
+            }
+        });
+
+        buttonMRP5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMRP5.setText("5");
+        buttonMRP5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRP5ActionPerformed(evt);
+            }
+        });
+
+        buttonMRFitbar.setText("Fitbar");
+        buttonMRFitbar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRFitbarActionPerformed(evt);
+            }
+        });
+
+        buttonMRP10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMRP10.setText("10");
+        buttonMRP10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRP10ActionPerformed(evt);
+            }
+        });
+
+        buttonMRChocolate.setText("Chocolate");
+        buttonMRChocolate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRChocolateActionPerformed(evt);
+            }
+        });
+
+        buttonMRP20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMRP20.setText("20");
+        buttonMRP20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRP20ActionPerformed(evt);
+            }
+        });
+
+        buttonMRIcedTea.setText("Iced Tea");
+        buttonMRIcedTea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRIcedTeaActionPerformed(evt);
+            }
+        });
+
+        buttonMRP50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMRP50.setText("50");
+        buttonMRP50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRP50ActionPerformed(evt);
+            }
+        });
+
+        buttonMRWater.setText("Water");
+        buttonMRWater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRWaterActionPerformed(evt);
+            }
+        });
+
+        buttonMRP100.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonMRP100.setText("100");
+        buttonMRP100.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRP100ActionPerformed(evt);
+            }
+        });
+
+        buttonMRSoda.setText("Soda");
+        buttonMRSoda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRSodaActionPerformed(evt);
+            }
+        });
+
+        labelMRPrice.setText("Price: "+dPrice);
+
+        labelMainteRegular.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        labelMainteRegular.setText("Maintenance Vending Machine");
+
+        labelMRCalories.setText("Calories: "+nCal);
+
+        labelMRName.setText("Name: ");
+
+        buttonMRPAdd.setText("+");
+        buttonMRPAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRPAddActionPerformed(evt);
+            }
+        });
+
+        buttonMRPMinus.setText("-");
+        buttonMRPMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRPMinusActionPerformed(evt);
+            }
+        });
+
+        labelMRCashQty.setText("Quantity: "+nCashQty
+        );
+
+        labelMRPAll.setText("₱ 1:     ₱ 5:    ₱ 10:    ₱ 20:    ₱ 50:    ₱ 100:  ");
+
+        buttonBackMainte.setText("Go Back");
+        buttonBackMainte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackMainteActionPerformed(evt);
+            }
+        });
+
+        buttonMRChangePriceAdd.setText("+");
+        buttonMRChangePriceAdd.setToolTipText("");
+        buttonMRChangePriceAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRChangePriceAddActionPerformed(evt);
+            }
+        });
+
+        buttonMRChangePriceMinus.setText("-");
+        buttonMRChangePriceMinus.setToolTipText("");
+        buttonMRChangePriceMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRChangePriceMinusActionPerformed(evt);
+            }
+        });
+
+        buttonMRChangeQtyAdd.setText("+");
+        buttonMRChangeQtyAdd.setToolTipText("");
+        buttonMRChangeQtyAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRChangeQtyAddActionPerformed(evt);
+            }
+        });
+
+        buttonMRChangeQtyMinus.setText("-");
+        buttonMRChangeQtyMinus.setToolTipText("");
+        buttonMRChangeQtyMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRChangeQtyMinusActionPerformed(evt);
+            }
+        });
+
+        buttonGetMoney.setText("Get Money");
+        buttonGetMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGetMoneyActionPerformed(evt);
+            }
+        });
+
+        buttonMRLogs.setText("View logs");
+        buttonMRLogs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMRLogsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout MaintenanceRegularLayout = new javax.swing.GroupLayout(MaintenanceRegular);
+        MaintenanceRegular.setLayout(MaintenanceRegularLayout);
+        MaintenanceRegularLayout.setHorizontalGroup(
+            MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelMRCalories)
+                                    .addComponent(labelMRQty, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceRegularLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(labelMRPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRChangePriceAdd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonMRChangePriceMinus))
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRChangeQtyAdd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonMRChangeQtyMinus)))
+                        .addGap(16, 16, 16))
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelMRName)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(buttonMRLogs)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelMRAdd)
+                                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                        .addComponent(buttonMRP5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonMRP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonGetMoney)
+                                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                        .addComponent(buttonMRP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonMRP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(labelMRCashQty)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonMRPMinus)
+                            .addComponent(buttonMRPAdd)))
+                    .addComponent(labelMRPAll))
+                .addGap(34, 34, 34))
+            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonBackMainte)
+                    .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                            .addGap(23, 23, 23)
+                            .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(buttonMRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonMRIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonMRSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                    .addComponent(buttonMRFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(buttonMRChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                    .addComponent(buttonMRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(buttonMRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                    .addComponent(buttonMRWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(buttonMRSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(labelMainteRegular)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        MaintenanceRegularLayout.setVerticalGroup(
+            MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackMainte)
+                .addGap(22, 22, 22)
+                .addComponent(labelMainteRegular)
+                .addGap(18, 18, 18)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMRSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonMRWater, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonMRIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonMRSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(labelMRAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMRP1)
+                            .addComponent(buttonMRP5)
+                            .addComponent(buttonMRP10)
+                            .addComponent(buttonMRPAdd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMRP20)
+                            .addComponent(buttonMRP50)
+                            .addComponent(buttonMRP100)
+                            .addComponent(buttonMRPMinus))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonGetMoney)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelMRCashQty)
+                        .addGap(22, 22, 22)
+                        .addComponent(labelMRPAll))
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(labelMRName)
+                        .addGap(17, 17, 17)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(buttonMRChangePriceAdd)
+                                    .addComponent(buttonMRChangePriceMinus)
+                                    .addComponent(labelMRPrice))
+                                .addGap(41, 41, 41)
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(buttonMRChangeQtyAdd)
+                                    .addComponent(buttonMRChangeQtyMinus)
+                                    .addComponent(labelMRQty)))
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(labelMRCalories)
+                                .addGap(38, 38, 38)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonMRLogs)))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+
+        labelPrice.setText("Price: " + dPrice);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -500,74 +1948,125 @@ public class Main extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(Regular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Regular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(MaintenanceRegular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Special, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(MaintenanceSpecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 12, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(Feature, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 12, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addComponent(RegularSpecial, javax.swing.GroupLayout.DEFAULT_SIZE, 864, Short.MAX_VALUE)
+                    .addComponent(RegularSpecial, javax.swing.GroupLayout.DEFAULT_SIZE, 2412, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(Regular, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(Regular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Special, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(MaintenanceRegular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(MaintenanceSpecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(Feature, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 6, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         setSize(new java.awt.Dimension(416, 608));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    DefaultListModel mod = new  DefaultListModel();
+    
+    private void buttonCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreateActionPerformed
         // TODO add your handling code here:
-      
+      jList1.setModel(mod); 
       MainMenu.setVisible(false);
       RegularSpecial.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buttonCreateActionPerformed
+    
+    private void buttonTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTestActionPerformed
         // TODO add your handling code here:
       if(isRegularCreated == true || isSpecialCreated == true){
         MainMenu.setVisible(false);
         Feature.setVisible(true);
       }
       else
-          jLabel3.setText("Create a vending machine first!");
-    }//GEN-LAST:event_jButton2ActionPerformed
+          labelWelcome.setText("Create a vending machine first!");
+    }//GEN-LAST:event_buttonTestActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_buttonExitActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void buttonCreateSpecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreateSpecActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        isRegularCreated = true;
-        isSpecialCreated = false;
+        this.itemSlots = new ArrayList<>(25);
+        this.itemBought = new ArrayList<>(25);
+        cash = new Cash();
+        ownCash = new Cash();
+        
+        isRegularCreated = false;
+        isSpecialCreated = true;
         MainMenu.setVisible(true);
         RegularSpecial.setVisible(false);
+        dPrice = 0;
+        totalAmount = 0;
+        nCal = 0;
+        nItemQty = 0;
+        nCashQty = 0;
+        nCash = 0;
+        totalSales = 0;
+        nItemBought = 0;
+        j = -1;
+        i = -1;
         // Add item slots
-        itemSlots.add(new Item("Chips", 15.0, 100, 8));
-        itemSlots.add(new Item("Candy", 10.0, 150, 12));
-        itemSlots.add(new Item("Gum", 23.0, 170, 15));
-        itemSlots.add(new Item("Skittle ", 50.0, 150, 12));
-        itemSlots.add(new Item("Fitbar", 35.0, 150, 14));
-        itemSlots.add(new Item("Chocolate", 40.0, 200, 9));
-        itemSlots.add(new Item("Iced Tea", 30.0, 150, 5));
+        
+        itemSlots.add(new Item("Crackers", 60, 100, 8));
+        itemSlots.add(new Item("Burger Patty", 30, 150, 12));
+        itemSlots.add(new Item("Hotdog", 23, 170, 15));
+        itemSlots.add(new Item("Mustard", 55.0, 150, 12));
+        itemSlots.add(new Item("Catsup", 35.0, 150, 14));
+        itemSlots.add(new Item("Mayonnaise", 77.0, 200, 9));
+        itemSlots.add(new Item("Iced Tea", 46.0, 150, 5));
         itemSlots.add(new Item("Water", 20.0, 0, 7));
-        itemSlots.add(new Item("Soda", 20.0, 200, 5));
-
+        itemSlots.add(new Item("Soda", 32.0, 200, 6));
+        itemSlots.add(new Item("Hotdog Sandwich", 99.0, 200, 11));
+        itemSlots.add(new Item("Hamburger", 149.0, 200, 13));
+        itemSlots.add(new Item("FishNCrackers", 169.0, 200, 10));
+        
+        itemBought.add(new Item("Crackers", 60, 100, 0));
+        itemBought.add(new Item("Burger Patty", 30, 150, 0));
+        itemBought.add(new Item("Hotdog", 23, 170, 0));
+        itemBought.add(new Item("Mustard", 55.0, 150, 0));
+        itemBought.add(new Item("Catsup", 35.0, 150, 0));
+        itemBought.add(new Item("Mayonnaise", 77.0, 200, 0));
+        itemBought.add(new Item("Iced Tea", 46.0, 150, 0));
+        itemBought.add(new Item("Water", 20.0, 0, 0));
+        itemBought.add(new Item("Soda", 32.0, 200, 0));
+        itemBought.add(new Item("Hotdog Sandwich", 99.0, 200, 0));
+        itemBought.add(new Item("Hamburger", 149.0, 200, 0));
+        itemBought.add(new Item("FishNCrackers", 169.0, 200, 0));
+        
         // Add denominations
         cash.addDenomination(1);
         cash.addDenomination(5);
@@ -575,216 +2074,1231 @@ public class Main extends javax.swing.JFrame {
         cash.addDenomination(20);
         cash.addDenomination(50);
         cash.addDenomination(100);
-        jLabel3.setText("You successfully created a regular vending machine.");
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-        int i = 0;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
+        ownCash.addDenomination(1);
+        ownCash.addDenomination(5);
+        ownCash.addDenomination(10);
+        ownCash.addDenomination(20);
+        ownCash.addDenomination(50);
+        ownCash.addDenomination(100);
+        ownCash.setQuantity(1, 25);
+        ownCash.setQuantity(5, 15);
+        ownCash.setQuantity(10, 14);
+        ownCash.setQuantity(20, 10);
+        ownCash.setQuantity(50, 7);
+        ownCash.setQuantity(100, 11);
         
-    }//GEN-LAST:event_jButton23ActionPerformed
+        buttonHotdogSandwich.setEnabled(false);
+        buttonHamburger.setEnabled(false);
+        buttonFishNCrackers.setEnabled(false);
+        
+        labelWelcome.setText("You successfully created a special vending machine.");
+    }//GEN-LAST:event_buttonCreateSpecActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void buttonCreateRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreateRegActionPerformed
         // TODO add your handling code here:
-        int i = 1;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton24ActionPerformed
+        this.itemSlots = new ArrayList<>(25);
+        this.itemBought = new ArrayList<>(25);
+        
+        cash = new Cash();
+        ownCash = new Cash();
+        
+        isRegularCreated = true;
+        isSpecialCreated = false;
+        MainMenu.setVisible(true);
+        RegularSpecial.setVisible(false);
+        dPrice = 0;
+        totalAmount = 0;
+        nCal = 0;
+        nItemQty = 0;
+        nCashQty = 0;
+        nCash = 0;
+        totalSales = 0;
+        nItemBought = 0;
+        j = -1;
+        i = -1;
+        
+        // Add item slots
+        itemSlots.add(new Item("Crackers", 60, 100, 8));
+        itemSlots.add(new Item("Burger Patty", 30, 150, 12));
+        itemSlots.add(new Item("Hotdog", 23, 170, 15));
+        itemSlots.add(new Item("Skittle ", 55.0, 150, 12));
+        itemSlots.add(new Item("Fitbar", 35.0, 150, 14));
+        itemSlots.add(new Item("Chocolate", 77.0, 200, 9));
+        itemSlots.add(new Item("Iced Tea", 46.0, 150, 5));
+        itemSlots.add(new Item("Water", 20.0, 0, 7));
+        itemSlots.add(new Item("Soda", 32.0, 200, 5));
+        
+        itemBought.add(new Item("Crackers", 60, 100, 0));
+        itemBought.add(new Item("Burger Patty", 30, 150, 0));
+        itemBought.add(new Item("Hotdog", 23, 170, 0));
+        itemBought.add(new Item("Skittle ", 55.0, 150, 0));
+        itemBought.add(new Item("Fitbar", 35.0, 150, 0));
+        itemBought.add(new Item("Chocolate", 77.0, 200, 0));
+        itemBought.add(new Item("Iced Tea", 46.0, 150, 0));
+        itemBought.add(new Item("Water", 20.0, 0, 0));
+        itemBought.add(new Item("Soda", 32.0, 200, 0));
+        // Add denominations
+        cash.addDenomination(1);
+        cash.addDenomination(5);
+        cash.addDenomination(10);
+        cash.addDenomination(20);
+        cash.addDenomination(50);
+        cash.addDenomination(100);
+        ownCash.addDenomination(1);
+        ownCash.addDenomination(5);
+        ownCash.addDenomination(10);
+        ownCash.addDenomination(20);
+        ownCash.addDenomination(50);
+        ownCash.addDenomination(100);
+        ownCash.setQuantity(1, 25);
+        ownCash.setQuantity(5, 15);
+        ownCash.setQuantity(10, 14);
+        ownCash.setQuantity(20, 10);
+        ownCash.setQuantity(50, 7);
+        ownCash.setQuantity(100, 11);
+        
+        labelWelcome.setText("You successfully created a regular vending machine.");
+    }//GEN-LAST:event_buttonCreateRegActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void buttonTestVendingFeaturesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTestVendingFeaturesActionPerformed
         // TODO add your handling code here:
-        int i = 2;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton25ActionPerformed
+        Feature.setVisible(false); 
+        if(isRegularCreated == true)
+            Regular.setVisible(true);
+        if(isSpecialCreated == true)
+            Special.setVisible(true);
+    }//GEN-LAST:event_buttonTestVendingFeaturesActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        // TODO add your handling code here:
-        int i = 3;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton26ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        int i = 3;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
-        int i = 5;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton27ActionPerformed
-
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        // TODO add your handling code here:
-        int i = 4;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton28ActionPerformed
-
-    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        // TODO add your handling code here:
-        int i = 7;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton29ActionPerformed
-
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        // TODO add your handling code here:
-        int i = 5;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton30ActionPerformed
-
-    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        // TODO add your handling code here:
-        int i = 0;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity: "+ nQuan);
-    }//GEN-LAST:event_jButton31ActionPerformed
-
-    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
-        // TODO add your handling code here:
-        int i = 6;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton32ActionPerformed
-
-    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
-        // TODO add your handling code here:
-        int i = 0;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity: "+ nQuan);
-    }//GEN-LAST:event_jButton33ActionPerformed
-
-    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        // TODO add your handling code here:
-        int i = 7;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton34ActionPerformed
-
-    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-        // TODO add your handling code here:
-        int i = 0;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton35ActionPerformed
-
-    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-        // TODO add your handling code here:
-        int i = 8;
-        strName = itemSlots.get(i).getName();
-        lName.setText("Name: "+strName);
-        dPrice = itemSlots.get(i).getPrice();
-        lPrice.setText("Price: "+dPrice);
-        nCal = itemSlots.get(i).getCalories();
-        lCal.setText("Calories: "+nCal);
-        nQuan = itemSlots.get(i).getQuantity();
-        lQuan.setText("Quantity left: "+ nQuan);
-    }//GEN-LAST:event_jButton36ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void buttonTestMainteFeaturesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTestMainteFeaturesActionPerformed
         // TODO add your handling code here:
         Feature.setVisible(false);
-        if (isRegularCreated == true){
-            Regular.setVisible(true);
-        }
-    }//GEN-LAST:event_jButton7ActionPerformed
+        if(isRegularCreated == true)
+            MaintenanceRegular.setVisible(true);
+        if(isSpecialCreated == true)
+            MaintenanceSpecial.setVisible(true);
+    }//GEN-LAST:event_buttonTestMainteFeaturesActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void buttonRPDecreaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRPDecreaseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+        if(nCashQty >0){
+        nCashQty--;
+        cash.setQuantity(nCash, nCashQty);
+        labelCashQty.setText("Quantity: "+nCashQty);
+        }
+    }//GEN-LAST:event_buttonRPDecreaseActionPerformed
+
+    private void buttonRPIncreaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRPIncreaseActionPerformed
+        // TODO add your handling code here:
+        if(nCashQty < 10){
+        nCashQty++;
+        labelCashQty.setText("Quantity: "+nCashQty);
+        cash.setQuantity(nCash, nCashQty);
+        }
+    }//GEN-LAST:event_buttonRPIncreaseActionPerformed
+
+    private void buttonSodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSodaActionPerformed
+        // TODO add your handling code here:
+        i = 8;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonSodaActionPerformed
+
+    private void buttonRP100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRP100ActionPerformed
+        // TODO add your handling code here:
+        nCash = 100;
+        j = 5;
+        nCashQty = cash.getQuantities().get(j);
+        labelCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonRP100ActionPerformed
+
+    private void buttonWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWaterActionPerformed
+        // TODO add your handling code here:
+        i = 7;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonWaterActionPerformed
+
+    private void buttonRP50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRP50ActionPerformed
+        // TODO add your handling code here:
+        nCash = 50;
+        j = 4;
+        nCashQty = cash.getQuantities().get(j);
+        labelCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonRP50ActionPerformed
+
+    private void buttonIcedTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIcedTeaActionPerformed
+        // TODO add your handling code here:
+        i = 6;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonIcedTeaActionPerformed
+
+    private void buttonRP20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRP20ActionPerformed
+        // TODO add your handling code here:
+        nCash = 20;
+        j = 3;
+        nCashQty = cash.getQuantities().get(j);
+        labelCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonRP20ActionPerformed
+
+    private void buttonChocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonChocolateActionPerformed
+        // TODO add your handling code here:
+        i = 5;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonChocolateActionPerformed
+
+    private void buttonRP10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRP10ActionPerformed
+        // TODO add your handling code here:
+       nCash = 10;
+       j = 2;
+       nCashQty = cash.getQuantities().get(j);
+       labelCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonRP10ActionPerformed
+
+    private void buttonFitbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFitbarActionPerformed
+        // TODO add your handling code here:
+        i = 4;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonFitbarActionPerformed
+
+    private void buttonRP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRP2ActionPerformed
+        // TODO add your handling code here:
+        nCash = 5;
+        j = 1;
+        nCashQty = cash.getQuantities().get(j);
+        labelCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonRP2ActionPerformed
+
+    private void buttonSkittleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSkittleActionPerformed
+        // TODO add your handling code here:
+        i = 3;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonSkittleActionPerformed
+
+    private void buttonRP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRP1ActionPerformed
+        // TODO add your handling code here:
+       nCash = 1;
+       j = 0;
+       nCashQty = cash.getQuantities().get(j);
+       cash.setQuantity(nCash, nCashQty);
+       labelTotal.setText("Total Amount:" + totalAmount);
+    }//GEN-LAST:event_buttonRP1ActionPerformed
+
+    private void buttonRHotdogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRHotdogActionPerformed
+        // TODO add your handling code here:
+        i = 2;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonRHotdogActionPerformed
+
+    private void buttonRBurgerPattyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRBurgerPattyActionPerformed
+        // TODO add your handling code here:
+        i = 1;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonRBurgerPattyActionPerformed
+
+    private void buttonRCrackersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRCrackersActionPerformed
+        // TODO add your handling code here:
+        i = 0;
+        strName = itemSlots.get(i).getName();
+        labelName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonRCrackersActionPerformed
+
+    private void buttonRAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRAddActionPerformed
+        // TODO add your handling code here:
+        totalAmount += cash.getTotalCash();
+        labelTotal.setText("Money: "+totalAmount);
+        nCashQty = cash.getQuantities().get(j);
+        cash.setQuantity(nCash, 0);
+        labelCashQty.setText("Quantity: 0");
+    }//GEN-LAST:event_buttonRAddActionPerformed
+
+    private void buttonRBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRBuyActionPerformed
+        // TODO add your handling code here:
+        if (nItemQty >0 && totalAmount >= dPrice && ownCash.getQuantities().get(0)>5 && ownCash.getQuantities().get(1)>5 && ownCash.getQuantities().get(2)>2 && ownCash.getQuantities().get(3)>2 && ownCash.getQuantities().get(4)>2 && ownCash.getQuantities().get(5)>2){
+        nItemQty--;
+        itemSlots.get(i).setQuantity(nItemQty);
+        nItemBought++;
+        itemBought.get(i).setQuantity(nItemBought);
+        labelQty.setText("Quantity left: "+ nItemQty);
+        totalAmount -= dPrice;
+        totalSales += dPrice;
+        labelTotal.setText("Money left: "+totalAmount);
+        labelBuy.setText("You bought: "+strName);
+        }
+        else
+            labelChange.setText("Not enough change! Contact operator ");
+    }//GEN-LAST:event_buttonRBuyActionPerformed
+
+    private void buttonMRCrackersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRCrackersActionPerformed
+        // TODO add your handling code here:
+        i = 0;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRCrackersActionPerformed
+
+    private void buttonMRBurgerPattyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRBurgerPattyActionPerformed
+        // TODO add your handling code here:
+        i = 1;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRBurgerPattyActionPerformed
+
+    private void buttonMRHotdogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRHotdogActionPerformed
+        // TODO add your handling code here:
+        i = 2;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRHotdogActionPerformed
+
+    private void buttonMRP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRP1ActionPerformed
+        // TODO add your handling code here:
+       nCash = 1;
+       j = 0;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMRCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMRP1ActionPerformed
+
+    private void buttonMRSkittleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRSkittleActionPerformed
+        // TODO add your handling code here:
+        i = 3;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRSkittleActionPerformed
+
+    private void buttonMRP5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRP5ActionPerformed
+        // TODO add your handling code here:
+       nCash = 5;
+       j = 1;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMRCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMRP5ActionPerformed
+
+    private void buttonMRFitbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRFitbarActionPerformed
+        // TODO add your handling code here:
+        i = 4;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRFitbarActionPerformed
+
+    private void buttonMRP10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRP10ActionPerformed
+        // TODO add your handling code here:
+       nCash = 10;
+       j = 2;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMRCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMRP10ActionPerformed
+
+    private void buttonMRChocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRChocolateActionPerformed
+        // TODO add your handling code here:
+        i = 5;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRChocolateActionPerformed
+
+    private void buttonMRP20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRP20ActionPerformed
+        // TODO add your handling code here:
+       nCash = 20;
+       j = 3;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMRCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMRP20ActionPerformed
+
+    private void buttonMRIcedTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRIcedTeaActionPerformed
+        // TODO add your handling code here:
+        i = 6;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRIcedTeaActionPerformed
+
+    private void buttonMRP50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRP50ActionPerformed
+        // TODO add your handling code here:
+       nCash = 50;
+       j = 4;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMRCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMRP50ActionPerformed
+
+    private void buttonMRWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRWaterActionPerformed
+        // TODO add your handling code here:
+        i = 7;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRWaterActionPerformed
+
+    private void buttonMRP100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRP100ActionPerformed
+        // TODO add your handling code here:
+       nCash = 100;
+       j = 5;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMRCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMRP100ActionPerformed
+
+    private void buttonMRSodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRSodaActionPerformed
+        // TODO add your handling code here:
+        i = 8;
+        strName = itemSlots.get(i).getName();
+        labelMRName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMRPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMRCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMRQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMRSodaActionPerformed
+
+    private void buttonMRPAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRPAddActionPerformed
+        // TODO add your handling code here:
+        if(j >=0 && nCashQty >=0 && nCashQty<25){
+            nCashQty++;
+            ownCash.setQuantity(nCash, nCashQty);
+            labelMRCashQty.setText("Quantity: "+nCashQty);
+        }
+    }//GEN-LAST:event_buttonMRPAddActionPerformed
+
+    private void buttonMRPMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRPMinusActionPerformed
+        // TODO add your handling code here:
+        if(j >0 && nCashQty >0 && nCashQty<=25){
+            nCashQty--;
+            ownCash.setQuantity(nCash, nCashQty);
+            labelMRCashQty.setText("Quantity: "+nCashQty);
+        }
+    }//GEN-LAST:event_buttonMRPMinusActionPerformed
+
+    private void buttonBackMainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackMainteActionPerformed
+        // TODO add your handling code here:
+        MaintenanceRegular.setVisible(false);
+        Feature.setVisible(true);
+    }//GEN-LAST:event_buttonBackMainteActionPerformed
+
+    private void buttonBackRegularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackRegularActionPerformed
+        // TODO add your handling code here:
+        Regular.setVisible(false);
+        Feature.setVisible(true);
+    }//GEN-LAST:event_buttonBackRegularActionPerformed
+
+    private void buttonBackCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackCreateActionPerformed
+        // TODO add your handling code here:
+        RegularSpecial.setVisible(false);
+        MainMenu.setVisible(true);
+    }//GEN-LAST:event_buttonBackCreateActionPerformed
+
+    private void buttonBackFeatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackFeatureActionPerformed
+        // TODO add your handling code here:
+        Feature.setVisible(false);
+        MainMenu.setVisible(true);
+    }//GEN-LAST:event_buttonBackFeatureActionPerformed
+
+    private void buttonMRChangePriceAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRChangePriceAddActionPerformed
+        // TODO add your handling code here:
+        if(i>=0){
+        dPrice++;
+        itemSlots.get(i).setPrice(dPrice);
+        labelMRPrice.setText("Price: "+dPrice);
+        }
+    }//GEN-LAST:event_buttonMRChangePriceAddActionPerformed
+
+    private void buttonMRChangePriceMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRChangePriceMinusActionPerformed
+        // TODO add your handling code here:
+        if(i>=0){
+        dPrice--;
+        itemSlots.get(i).setPrice(dPrice);
+        labelMRPrice.setText("Price: "+dPrice);
+        }
+    }//GEN-LAST:event_buttonMRChangePriceMinusActionPerformed
+
+    private void buttonMRChangeQtyAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRChangeQtyAddActionPerformed
+        // TODO add your handling code here:
+        if(i>=0 && nItemQty>=0 && nItemQty<20){
+            nItemQty++;
+            itemSlots.get(i).setQuantity(nItemQty);
+            labelMRQty.setText("Quantity: "+nItemQty);
+        }
+    }//GEN-LAST:event_buttonMRChangeQtyAddActionPerformed
+
+    private void buttonMRChangeQtyMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRChangeQtyMinusActionPerformed
+        // TODO add your handling code here:
+        if(i>0 &&nItemQty>0 && nItemQty<=20){
+            nItemQty--;
+            itemSlots.get(i).setQuantity(nItemQty);
+            labelMRQty.setText("Quantity:"+nItemQty);
+        }
+    }//GEN-LAST:event_buttonMRChangeQtyMinusActionPerformed
+
+    private void buttonSP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSP1ActionPerformed
+        // TODO add your handling code here:
+        nCash = 1;
+        j = 0;
+        nCashQty = cash.getQuantities().get(j);
+        labelSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonSP1ActionPerformed
+
+    private void buttonSP5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSP5ActionPerformed
+        // TODO add your handling code here:
+        nCash = 5;
+        j = 1;
+        nCashQty = cash.getQuantities().get(j);
+        labelSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonSP5ActionPerformed
+
+    private void buttonSP10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSP10ActionPerformed
+        // TODO add your handling code here:
+        nCash = 10;
+        j = 2;
+        nCashQty = cash.getQuantities().get(j);
+        labelSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonSP10ActionPerformed
+
+    private void buttonSP20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSP20ActionPerformed
+        // TODO add your handling code here:
+        nCash = 20;
+        j = 3;
+        nCashQty = cash.getQuantities().get(j);
+        labelSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonSP20ActionPerformed
+
+    private void buttonSP50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSP50ActionPerformed
+        // TODO add your handling code here:
+        nCash = 50;
+        j = 4;
+        nCashQty = cash.getQuantities().get(j);
+        labelSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonSP50ActionPerformed
+
+    private void buttonSP100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSP100ActionPerformed
+        // TODO add your handling code here:
+        nCash = 100;
+        j = 5;
+        nCashQty = cash.getQuantities().get(j);
+        labelSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonSP100ActionPerformed
+
+    private void buttonSPIncreaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSPIncreaseActionPerformed
+        // TODO add your handling code here:
+        if(nCashQty < 10){
+        nCashQty++;
+        labelSCashQty.setText("Quantity: "+nCashQty);
+        cash.setQuantity(nCash, nCashQty);
+        }
+    }//GEN-LAST:event_buttonSPIncreaseActionPerformed
+
+    private void buttonSPDecreaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSPDecreaseActionPerformed
+        // TODO add your handling code here:
+        if(nCashQty > 0){
+        nCashQty--;
+        labelSCashQty.setText("Quantity: "+nCashQty);
+        cash.setQuantity(nCash, nCashQty);
+        }
+    }//GEN-LAST:event_buttonSPDecreaseActionPerformed
+
+    private void buttonSAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSAddActionPerformed
+        // TODO add your handling code here:
+        totalAmount += cash.getTotalCash();
+        labelSTotal.setText("Money: "+totalAmount);
+        cash.setQuantity(nCash, nCashQty=0);
+        labelSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonSAddActionPerformed
+
+    private void buttonSBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSBuyActionPerformed
+        // TODO add your handling code here:
+        if (nItemQty >0 && totalAmount >= dPrice&& ownCash.getQuantities().get(0)>5 && ownCash.getQuantities().get(1)>5 && ownCash.getQuantities().get(2)>2 && ownCash.getQuantities().get(3)>2 && ownCash.getQuantities().get(4)>2 && ownCash.getQuantities().get(5)>2){
+        nItemQty--;
+        itemSlots.get(i).setQuantity(nItemQty);
+        nItemBought++;
+        itemBought.get(i).setQuantity(nItemBought);
+        labelSQty.setText("Quantity left: "+ nItemQty);
+        totalAmount -= dPrice;
+        totalSales += dPrice;
+        labelSTotal.setText("Money left: "+totalAmount);
+        labelSBuy.setText("You bought: "+strName);
+        if(i == 0 && (isCatsupBought == true || isMayonnaiseBought == true || isMustardBought == true))
+            buttonHotdogSandwich.setEnabled(true);
+        if(i == 1)
+            buttonHamburger.setEnabled(true);
+        if(i == 2)
+            buttonFishNCrackers.setEnabled(true);
+        }
+        else
+            labelChange.setText("Not enough change! Contact operator ");
+    }//GEN-LAST:event_buttonSBuyActionPerformed
+
+    private void buttonBackRegular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackRegular1ActionPerformed
+        // TODO add your handling code here:
+        Special.setVisible(false);
+        Feature.setVisible(true);
+    }//GEN-LAST:event_buttonBackRegular1ActionPerformed
+
+    private void buttonBurgerPattyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBurgerPattyActionPerformed
+        // TODO add your handling code here:
+        i = 1;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonBurgerPattyActionPerformed
+
+    private void buttonCrackersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrackersActionPerformed
+        // TODO add your handling code here:
+        i = 2;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonCrackersActionPerformed
+
+    private void buttonHotdogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHotdogActionPerformed
+        // TODO add your handling code here:
+        i = 0;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonHotdogActionPerformed
+
+    private void buttonMustardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMustardActionPerformed
+        // TODO add your handling code here:
+        i = 3;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+        isMustardBought = true;
+    }//GEN-LAST:event_buttonMustardActionPerformed
+
+    private void buttonSpecIcedTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpecIcedTeaActionPerformed
+        // TODO add your handling code here:
+        i = 6;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonSpecIcedTeaActionPerformed
+
+    private void buttonSpecSodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpecSodaActionPerformed
+        // TODO add your handling code here:
+        i = 8;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonSpecSodaActionPerformed
+
+    private void buttonMayonnaiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMayonnaiseActionPerformed
+        // TODO add your handling code here:
+        i = 5;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMayonnaiseActionPerformed
+
+    private void buttonSpecWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpecWaterActionPerformed
+        // TODO add your handling code here:
+        i = 7;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+        
+    }//GEN-LAST:event_buttonSpecWaterActionPerformed
+
+    private void buttonCatsupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCatsupActionPerformed
+        // TODO add your handling code here:
+        i = 4;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonCatsupActionPerformed
+
+    private void buttonHotdogSandwichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHotdogSandwichActionPerformed
+        // TODO add your handling code here:
+        i = 9;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonHotdogSandwichActionPerformed
+
+    private void buttonHamburgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHamburgerActionPerformed
+        // TODO add your handling code here:
+        i = 10;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonHamburgerActionPerformed
+
+    private void buttonFishNCrackersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFishNCrackersActionPerformed
+        // TODO add your handling code here:
+        i = 11;
+        strName = itemSlots.get(i).getName();
+        labelSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonFishNCrackersActionPerformed
+
+    private void buttonMSP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSP1ActionPerformed
+        // TODO add your handling code here:
+       nCash = 1;
+       j = 0;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMSP1ActionPerformed
+
+    private void buttonMSP5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSP5ActionPerformed
+        // TODO add your handling code here:
+       nCash = 5;
+       j = 1;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMSP5ActionPerformed
+
+    private void buttonMSP10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSP10ActionPerformed
+        // TODO add your handling code here:
+        nCash = 10;
+       j = 2;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMSP10ActionPerformed
+
+    private void buttonMSP20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSP20ActionPerformed
+        // TODO add your handling code here:
+       nCash = 20;
+       j = 3;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMSP20ActionPerformed
+
+    private void buttonMSP50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSP50ActionPerformed
+        // TODO add your handling code here:
+        nCash = 50;
+       j = 4;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMSP50ActionPerformed
+
+    private void buttonMSP100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSP100ActionPerformed
+        // TODO add your handling code here:
+        nCash = 100;
+       j = 5;
+       nCashQty = ownCash.getQuantities().get(j);
+       labelMSCashQty.setText("Quantity: "+nCashQty);
+    }//GEN-LAST:event_buttonMSP100ActionPerformed
+
+    private void buttonMSPAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSPAddActionPerformed
+        // TODO add your handling code here:
+        if(j >=0 && nCashQty >=0 && nCashQty<25){
+            nCashQty++;
+            ownCash.setQuantity(nCash, nCashQty);
+            labelMSCashQty.setText("Quantity: "+nCashQty);
+        }
+    }//GEN-LAST:event_buttonMSPAddActionPerformed
+
+    private void buttonMSPMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSPMinusActionPerformed
+        // TODO add your handling code here:
+        if(j >0 && nCashQty >=0 && nCashQty<=25){
+            nCashQty--;
+            ownCash.setQuantity(nCash, nCashQty);
+            labelMSCashQty.setText("Quantity: "+nCashQty);
+        }
+    }//GEN-LAST:event_buttonMSPMinusActionPerformed
+
+    private void buttonMSPGetMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSPGetMoneyActionPerformed
+        // TODO add your handling code here:
+        if(ownCash.getQuantities().get(0)>10){
+            ownCash.setQuantity(1, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(1)>10){
+            ownCash.setQuantity(5, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(2)>10){
+            ownCash.setQuantity(10, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(3)>10){
+            ownCash.setQuantity(20, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(4)>10){
+            ownCash.setQuantity(50, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(5)>10){
+            ownCash.setQuantity(100, 10);
+            nCashQty = 10;
+        }
+    }//GEN-LAST:event_buttonMSPGetMoneyActionPerformed
+
+    private void buttonBackSMainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackSMainteActionPerformed
+        // TODO add your handling code here:
+        MaintenanceSpecial.setVisible(false);
+        Feature.setVisible(true);
+    }//GEN-LAST:event_buttonBackSMainteActionPerformed
+
+    private void buttonMSChangePriceAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSChangePriceAddActionPerformed
+        // TODO add your handling code here:
+        if(i>=0){
+        dPrice++;
+        itemSlots.get(i).setPrice(dPrice);
+        labelMSPrice.setText("Price: "+dPrice);
+        }
+    }//GEN-LAST:event_buttonMSChangePriceAddActionPerformed
+
+    private void buttonMSChangePriceMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSChangePriceMinusActionPerformed
+        // TODO add your handling code here:
+        if(i>=0 && dPrice>0){
+        dPrice--;
+        itemSlots.get(i).setPrice(dPrice);
+        labelMSPrice.setText("Price: "+dPrice);
+        }
+    }//GEN-LAST:event_buttonMSChangePriceMinusActionPerformed
+
+    private void buttonMSChangeQtyAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSChangeQtyAddActionPerformed
+        // TODO add your handling code here:
+        if(i>=0 && nItemQty>=0 && nItemQty<20){
+            nItemQty++;
+            itemSlots.get(i).setQuantity(nItemQty);
+            labelMSQty.setText("Quantity: "+nItemQty);
+        }
+    }//GEN-LAST:event_buttonMSChangeQtyAddActionPerformed
+
+    private void buttonMSChangeQtyMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSChangeQtyMinusActionPerformed
+        // TODO add your handling code here:
+        if(i>0 && nItemQty>=0 && nItemQty<=20){
+            nItemQty--;
+            itemSlots.get(i).setQuantity(nItemQty);
+            labelMSQty.setText("Quantity: "+nItemQty);
+        }
+    }//GEN-LAST:event_buttonMSChangeQtyMinusActionPerformed
+
+    private void buttonMSHotdogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSHotdogActionPerformed
+        // TODO add your handling code here:
+        i = 0;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMSHotdogActionPerformed
+
+    private void buttonMSBurgerPattyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSBurgerPattyActionPerformed
+        // TODO add your handling code here:
+        i = 1;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMSBurgerPattyActionPerformed
+
+    private void buttonMSCrackersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSCrackersActionPerformed
+        // TODO add your handling code here:
+        i = 2;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMSCrackersActionPerformed
+
+    private void buttonMSMayonnaiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSMayonnaiseActionPerformed
+        // TODO add your handling code here:
+        i = 5;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+        isMayonnaiseBought = true;
+    }//GEN-LAST:event_buttonMSMayonnaiseActionPerformed
+
+    private void buttonMSCatsupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSCatsupActionPerformed
+        // TODO add your handling code here:
+        i = 4;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+        isCatsupBought = true;
+    }//GEN-LAST:event_buttonMSCatsupActionPerformed
+
+    private void buttonMSMustardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSMustardActionPerformed
+        // TODO add your handling code here:
+        i = 3;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMSMustardActionPerformed
+
+    private void buttonMSpecIcedTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSpecIcedTeaActionPerformed
+        // TODO add your handling code here:
+        i = 6;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMSpecIcedTeaActionPerformed
+
+    private void buttonMSpecWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSpecWaterActionPerformed
+        // TODO add your handling code here:
+        i = 7;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMSpecWaterActionPerformed
+
+    private void buttonMSpecSodaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSpecSodaActionPerformed
+        // TODO add your handling code here:
+        i = 8;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMSpecSodaActionPerformed
+
+    private void buttonMFishNCrackersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMFishNCrackersActionPerformed
+        // TODO add your handling code here:
+        i = 11;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMFishNCrackersActionPerformed
+
+    private void buttonMHamburgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMHamburgerActionPerformed
+        // TODO add your handling code here:
+        i = 10;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMHamburgerActionPerformed
+
+    private void buttonMHotdogSandwichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMHotdogSandwichActionPerformed
+        // TODO add your handling code here:
+        i = 9;
+        strName = itemSlots.get(i).getName();
+        labelMSName.setText("Name: "+strName);
+        dPrice = itemSlots.get(i).getPrice();
+        labelMSPrice.setText("Price: "+dPrice);
+        nCal = itemSlots.get(i).getCalories();
+        labelMSCalories.setText("Calories: "+nCal);
+        nItemQty = itemSlots.get(i).getQuantity();
+        labelMSQty.setText("Quantity: "+ nItemQty);
+    }//GEN-LAST:event_buttonMHotdogSandwichActionPerformed
+
+    private void buttonRGetChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRGetChangeActionPerformed
+        // TODO add your handling code here:
+        if(ownCash.getQuantities().get(0)>5 && ownCash.getQuantities().get(1)>5 && ownCash.getQuantities().get(2)>2 && ownCash.getQuantities().get(3)>2 && ownCash.getQuantities().get(4)>2 && ownCash.getQuantities().get(5)>2){
+        cash.removeCash(totalAmount);
+        labelAllP.setText("₱ 1:" + cash.getQuantities().get(0) + "₱ 5:" + cash.getQuantities().get(1)+"₱ 10:"+cash.getQuantities().get(2)+"₱ 20:"+cash.getQuantities().get(3)+"₱ 50:"+cash.getQuantities().get(4)+"₱ 100: "+cash.getQuantities().get(5));
+        labelChange.setText("Your change is: "+totalAmount);
+        totalAmount = 0;
+        labelTotal.setText("Money left: "+totalAmount);
+        
+        ownCash.setQuantity(1, ownCash.getQuantities().get(0)-cash.getQuantities().get(0));
+        ownCash.setQuantity(5, ownCash.getQuantities().get(1)-cash.getQuantities().get(1));
+        ownCash.setQuantity(10, ownCash.getQuantities().get(2)-cash.getQuantities().get(2));
+        ownCash.setQuantity(20, ownCash.getQuantities().get(3)-cash.getQuantities().get(3));
+        ownCash.setQuantity(50, ownCash.getQuantities().get(4)-cash.getQuantities().get(4));
+        ownCash.setQuantity(100, ownCash.getQuantities().get(5)-cash.getQuantities().get(5));
+        
+        cash.setQuantity(1, 0);
+        cash.setQuantity(5, 0);
+        cash.setQuantity(10, 0);
+        cash.setQuantity(20, 0);
+        cash.setQuantity(50, 0);
+        cash.setQuantity(100, 0);
+        }
+        else
+            labelChange.setText("Not enough change! Contact operator ");
+    }//GEN-LAST:event_buttonRGetChangeActionPerformed
+
+    private void buttonGetMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGetMoneyActionPerformed
+        // TODO add your handling code here:
+        if(ownCash.getQuantities().get(0)>10){
+            ownCash.setQuantity(1, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(1)>10){
+            ownCash.setQuantity(5, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(2)>10){
+            ownCash.setQuantity(10, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(3)>10){
+            ownCash.setQuantity(20, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(4)>10){
+            ownCash.setQuantity(50, 10);
+            nCashQty = 10;
+        }
+        if(ownCash.getQuantities().get(5)>10){
+            ownCash.setQuantity(100, 10);
+            nCashQty = 10;
+        }
+    }//GEN-LAST:event_buttonGetMoneyActionPerformed
+
+    private void buttonSGetChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSGetChangeActionPerformed
+        // TODO add your handling code here:
+        if(ownCash.getQuantities().get(0)>cash.getQuantities().get(0) && ownCash.getQuantities().get(1)>cash.getQuantities().get(1) && ownCash.getQuantities().get(2)>cash.getQuantities().get(2) && ownCash.getQuantities().get(3)>cash.getQuantities().get(3) && ownCash.getQuantities().get(4)>cash.getQuantities().get(4) && ownCash.getQuantities().get(5)>cash.getQuantities().get(5)){
+        cash.removeCash(totalAmount);
+        labelSAllP.setText("₱ 1:" + cash.getQuantities().get(0) + "₱ 5:" + cash.getQuantities().get(1)+"₱ 10:"+cash.getQuantities().get(2)+"₱ 20:"+cash.getQuantities().get(3)+"₱ 50:"+cash.getQuantities().get(4)+"₱ 100: "+cash.getQuantities().get(5));
+        labelSChange.setText("Your change is: "+totalAmount);
+        totalAmount = 0;
+        labelSTotal.setText("Money left: "+totalAmount);
+        
+        ownCash.setQuantity(1, ownCash.getQuantities().get(0)-cash.getQuantities().get(0));
+        ownCash.setQuantity(5, ownCash.getQuantities().get(1)-cash.getQuantities().get(1));
+        ownCash.setQuantity(10, ownCash.getQuantities().get(2)-cash.getQuantities().get(2));
+        ownCash.setQuantity(20, ownCash.getQuantities().get(3)-cash.getQuantities().get(3));
+        ownCash.setQuantity(50, ownCash.getQuantities().get(4)-cash.getQuantities().get(4));
+        ownCash.setQuantity(100, ownCash.getQuantities().get(5)-cash.getQuantities().get(5));
+        
+        cash.setQuantity(1, 0);
+        cash.setQuantity(5, 0);
+        cash.setQuantity(10, 0);
+        cash.setQuantity(20, 0);
+        cash.setQuantity(50, 0);
+        cash.setQuantity(100, 0);
+        }
+        else
+            labelSChange.setText("Not enough change! Buy more or add money ");
+    }//GEN-LAST:event_buttonSGetChangeActionPerformed
+
+    private void buttonMRLogsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMRLogsActionPerformed
+        // TODO add your handling code here:
+        mod = new  DefaultListModel();
+        jList1.setModel(mod); 
+        MaintenanceRegular.setVisible(false);
+        List.setVisible(true);
+        for(i = 0; i<itemBought.size();i++)
+            mod.addElement("You sold "+itemBought.get(i).getQuantity()+" of "+itemBought.get(i).getName());
+        mod.addElement("Your total sales since your last visit is: "+totalSales);
+       
+    }//GEN-LAST:event_buttonMRLogsActionPerformed
+
+    private void buttonMSLogsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSLogsActionPerformed
+        // TODO add your handling code here:
+        mod = new  DefaultListModel();
+        jList1.setModel(mod); 
+        MaintenanceSpecial.setVisible(false);
+        List.setVisible(true);
+        for(i = 0; i<itemBought.size();i++)
+            mod.addElement("You sold "+itemBought.get(i).getQuantity()+" of "+itemBought.get(i).getName());
+        mod.addElement("Your total sales since your last visit is: "+totalSales);
+    }//GEN-LAST:event_buttonMSLogsActionPerformed
+
+    private void buttonListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonListActionPerformed
+        // TODO add your handling code here:
+        List.setVisible(false);
+        if(isRegularCreated == true)
+            MaintenanceRegular.setVisible(true);
+        if(isSpecialCreated == true)
+            MaintenanceSpecial.setVisible(true);
+    }//GEN-LAST:event_buttonListActionPerformed
 
     /**
      * @param args the command line arguments
@@ -824,40 +3338,163 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Feature;
+    private javax.swing.JPanel List;
     private javax.swing.JPanel MainMenu;
+    private javax.swing.JPanel MaintenanceRegular;
+    private javax.swing.JPanel MaintenanceSpecial;
     private javax.swing.JPanel Regular;
     private javax.swing.JPanel RegularSpecial;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JPanel Special;
+    private javax.swing.JButton buttonBackCreate;
+    private javax.swing.JButton buttonBackFeature;
+    private javax.swing.JButton buttonBackMainte;
+    private javax.swing.JButton buttonBackRegular;
+    private javax.swing.JButton buttonBackRegular1;
+    private javax.swing.JButton buttonBackSMainte;
+    private javax.swing.JButton buttonBurgerPatty;
+    private javax.swing.JButton buttonCatsup;
+    private javax.swing.JButton buttonChocolate;
+    private javax.swing.JButton buttonCrackers;
+    private javax.swing.JButton buttonCreate;
+    private javax.swing.JButton buttonCreateReg;
+    private javax.swing.JButton buttonCreateSpec;
+    private javax.swing.JButton buttonExit;
+    private javax.swing.JButton buttonFishNCrackers;
+    private javax.swing.JButton buttonFitbar;
+    private javax.swing.JButton buttonGetMoney;
+    private javax.swing.JButton buttonHamburger;
+    private javax.swing.JButton buttonHotdog;
+    private javax.swing.JButton buttonHotdogSandwich;
+    private javax.swing.JButton buttonIcedTea;
+    private javax.swing.JButton buttonList;
+    private javax.swing.JButton buttonMFishNCrackers;
+    private javax.swing.JButton buttonMHamburger;
+    private javax.swing.JButton buttonMHotdogSandwich;
+    private javax.swing.JButton buttonMRBurgerPatty;
+    private javax.swing.JButton buttonMRChangePriceAdd;
+    private javax.swing.JButton buttonMRChangePriceMinus;
+    private javax.swing.JButton buttonMRChangeQtyAdd;
+    private javax.swing.JButton buttonMRChangeQtyMinus;
+    private javax.swing.JButton buttonMRChocolate;
+    private javax.swing.JButton buttonMRCrackers;
+    private javax.swing.JButton buttonMRFitbar;
+    private javax.swing.JButton buttonMRHotdog;
+    private javax.swing.JButton buttonMRIcedTea;
+    private javax.swing.JButton buttonMRLogs;
+    private javax.swing.JButton buttonMRP1;
+    private javax.swing.JButton buttonMRP10;
+    private javax.swing.JButton buttonMRP100;
+    private javax.swing.JButton buttonMRP20;
+    private javax.swing.JButton buttonMRP5;
+    private javax.swing.JButton buttonMRP50;
+    private javax.swing.JButton buttonMRPAdd;
+    private javax.swing.JButton buttonMRPMinus;
+    private javax.swing.JButton buttonMRSkittle;
+    private javax.swing.JButton buttonMRSoda;
+    private javax.swing.JButton buttonMRWater;
+    private javax.swing.JButton buttonMSBurgerPatty;
+    private javax.swing.JButton buttonMSCatsup;
+    private javax.swing.JButton buttonMSChangePriceAdd;
+    private javax.swing.JButton buttonMSChangePriceMinus;
+    private javax.swing.JButton buttonMSChangeQtyAdd;
+    private javax.swing.JButton buttonMSChangeQtyMinus;
+    private javax.swing.JButton buttonMSCrackers;
+    private javax.swing.JButton buttonMSHotdog;
+    private javax.swing.JButton buttonMSLogs;
+    private javax.swing.JButton buttonMSMayonnaise;
+    private javax.swing.JButton buttonMSMustard;
+    private javax.swing.JButton buttonMSP1;
+    private javax.swing.JButton buttonMSP10;
+    private javax.swing.JButton buttonMSP100;
+    private javax.swing.JButton buttonMSP20;
+    private javax.swing.JButton buttonMSP5;
+    private javax.swing.JButton buttonMSP50;
+    private javax.swing.JButton buttonMSPAdd;
+    private javax.swing.JButton buttonMSPGetMoney;
+    private javax.swing.JButton buttonMSPMinus;
+    private javax.swing.JButton buttonMSpecIcedTea;
+    private javax.swing.JButton buttonMSpecSoda;
+    private javax.swing.JButton buttonMSpecWater;
+    private javax.swing.JButton buttonMayonnaise;
+    private javax.swing.JButton buttonMustard;
+    private javax.swing.JButton buttonRAdd;
+    private javax.swing.JButton buttonRBurgerPatty;
+    private javax.swing.JButton buttonRBuy;
+    private javax.swing.JButton buttonRCrackers;
+    private javax.swing.JButton buttonRGetChange;
+    private javax.swing.JButton buttonRHotdog;
+    private javax.swing.JButton buttonRP1;
+    private javax.swing.JButton buttonRP10;
+    private javax.swing.JButton buttonRP100;
+    private javax.swing.JButton buttonRP2;
+    private javax.swing.JButton buttonRP20;
+    private javax.swing.JButton buttonRP50;
+    private javax.swing.JButton buttonRPDecrease;
+    private javax.swing.JButton buttonRPIncrease;
+    private javax.swing.JButton buttonSAdd;
+    private javax.swing.JLabel buttonSAddMoney;
+    private javax.swing.JButton buttonSBuy;
+    private javax.swing.JButton buttonSGetChange;
+    private javax.swing.JButton buttonSP1;
+    private javax.swing.JButton buttonSP10;
+    private javax.swing.JButton buttonSP100;
+    private javax.swing.JButton buttonSP20;
+    private javax.swing.JButton buttonSP5;
+    private javax.swing.JButton buttonSP50;
+    private javax.swing.JButton buttonSPDecrease;
+    private javax.swing.JButton buttonSPIncrease;
+    private javax.swing.JButton buttonSkittle;
+    private javax.swing.JButton buttonSoda;
+    private javax.swing.JButton buttonSpecIcedTea;
+    private javax.swing.JButton buttonSpecSoda;
+    private javax.swing.JButton buttonSpecWater;
+    private javax.swing.JButton buttonTest;
+    private javax.swing.JButton buttonTestMainteFeatures;
+    private javax.swing.JButton buttonTestVendingFeatures;
+    private javax.swing.JButton buttonWater;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel lCal;
-    private javax.swing.JLabel lName;
-    private javax.swing.JLabel lPrice;
-    private javax.swing.JLabel lQuan;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelAdd;
+    private javax.swing.JLabel labelAllP;
+    private javax.swing.JLabel labelBuy;
+    private javax.swing.JLabel labelCalories;
+    private javax.swing.JLabel labelCashQty;
+    private javax.swing.JLabel labelChange;
+    private javax.swing.JLabel labelChoose;
+    private javax.swing.JLabel labelChooseVM;
+    private javax.swing.JLabel labelMRAdd;
+    private javax.swing.JLabel labelMRCalories;
+    private javax.swing.JLabel labelMRCashQty;
+    private javax.swing.JLabel labelMRName;
+    private javax.swing.JLabel labelMRPAll;
+    private javax.swing.JLabel labelMRPrice;
+    private javax.swing.JLabel labelMRQty;
+    private javax.swing.JLabel labelMSCalories;
+    private javax.swing.JLabel labelMSCashQty;
+    private javax.swing.JLabel labelMSName;
+    private javax.swing.JLabel labelMSPAll;
+    private javax.swing.JLabel labelMSPrice;
+    private javax.swing.JLabel labelMSQty;
+    private javax.swing.JLabel labelMSReplenish;
+    private javax.swing.JLabel labelMainteRegular;
+    private javax.swing.JLabel labelMainteSpecial;
+    private javax.swing.JLabel labelName;
+    private javax.swing.JLabel labelPrice;
+    private javax.swing.JLabel labelQty;
+    private javax.swing.JLabel labelRegular;
+    private javax.swing.JLabel labelRegular1;
+    private javax.swing.JLabel labelSAllP;
+    private javax.swing.JLabel labelSBuy;
+    private javax.swing.JLabel labelSCalories;
+    private javax.swing.JLabel labelSCashQty;
+    private javax.swing.JLabel labelSChange;
+    private javax.swing.JLabel labelSName;
+    private javax.swing.JLabel labelSPrice;
+    private javax.swing.JLabel labelSQty;
+    private javax.swing.JLabel labelSTotal;
+    private javax.swing.JLabel labelTotal;
+    private javax.swing.JLabel labelVending;
+    private javax.swing.JLabel labelWelcome;
     // End of variables declaration//GEN-END:variables
 }

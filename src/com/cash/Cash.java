@@ -6,11 +6,12 @@ public class Cash {
     
     private ArrayList<Integer> denominations;
     private ArrayList<Integer> quantities;
+    int[] change; 
 
     public Cash(ArrayList<Integer> denominations) {
         this.denominations = denominations;
         this.quantities = new ArrayList<>();
-
+        
         for (int i = 0; i < denominations.size(); i++) {
             quantities.add(50);
         }
@@ -28,7 +29,7 @@ public class Cash {
      */
     public void addDenomination(int denomination) {
         this.denominations.add(denomination);
-        this.quantities.add(50);
+        this.quantities.add(0);
     }
 
     /**
@@ -49,20 +50,29 @@ public class Cash {
      * returns change to the user
      * 
      * @param amount
+     * 
+     * 
      */
     public void removeCash(double amount) {
+        int remainingAmount = (int) amount;
+        change = new int[this.denominations.size()];
         for (int i = denominations.size() - 1; i >= 0; i--) {
             int denomination = denominations.get(i);
-            int quantity = (int) (amount / denomination);
-            if (quantity > 0) {
-                int currentQuantity = quantities.get(i);
-                int remainingQuantity = Math.max(currentQuantity - quantity, 0);
-                quantities.set(i, remainingQuantity);
-                amount -= denomination * Math.min(currentQuantity, quantity);
+            int numDenom = remainingAmount / denomination;
+
+            if (numDenom > 0) {
+                change[i] = numDenom;
+                remainingAmount -= numDenom * denomination;
             }
         }
-    }
 
+        if (remainingAmount != 0) {
+            // If we can't provide exact change with the given denominations, return null
+        }
+        for (int i = 0; i < this.quantities.size(); i++) {
+            this.quantities.set(i, change[i]);
+        }
+    }
     /**
      * gets the total amount of cash the user input.
      * 
@@ -135,7 +145,7 @@ public class Cash {
     public ArrayList<Integer> getQuantities() {
         return this.quantities;
     }
-
+    
     /**
      * gets the list of denominations
      * 
@@ -144,5 +154,4 @@ public class Cash {
     public ArrayList<Integer> getDenominations() {
         return this.denominations;
     }
-
 }
