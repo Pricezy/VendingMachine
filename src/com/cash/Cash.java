@@ -25,7 +25,7 @@ public class Cash {
     /**
      * adds a denomination into the list of denominations
      * 
-     * @param denomination
+     * @param denomination this is the denomination you want to add
      */
     public void addDenomination(int denomination) {
         this.denominations.add(denomination);
@@ -36,7 +36,7 @@ public class Cash {
     /**
      * returns change to the user
      * 
-     * @param amount
+     * @param amount amount that will give to the user
      * 
      * 
      */
@@ -63,7 +63,7 @@ public class Cash {
     /**
      * gets the total amount of cash the user input.
      * 
-     * @return totalCash
+     * @return totalCash gets the total cash
      */
     public double getTotalCash() {
         double totalCash = 0.0;
@@ -78,8 +78,8 @@ public class Cash {
     /**
      * to change the quantity of a denomination
      * 
-     * @param denomination
-     * @param quantity
+     * @param denomination denomination of money
+     * @param quantity quantity that you want to ser
      */
     public void setQuantity(int denomination, int quantity) {
         int index = denominations.indexOf(denomination);
@@ -91,7 +91,7 @@ public class Cash {
     /**
      * gets the list of quantities
      * 
-     * @returns quantities
+     * @return this.quantities
      */
     public ArrayList<Integer> getQuantities() {
         return this.quantities;
@@ -100,7 +100,7 @@ public class Cash {
     /**
      * gets the list of denominations
      * 
-     * @returns denominations
+     * @return denominations
      */
     public ArrayList<Integer> getDenominations() {
         return this.denominations;

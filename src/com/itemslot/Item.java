@@ -36,7 +36,7 @@ public class Item {
     /**
      * gets the name of an item
      * 
-     * @returns name
+     * @return name
      */
     public String getName() {
         return this.name;
@@ -45,7 +45,7 @@ public class Item {
     /**
      * gets the price of an item
      * 
-     * @returns price
+     * @return price
      */
     public double getPrice() {
         return this.price;
@@ -54,7 +54,7 @@ public class Item {
     /**
      * gets the calories of an item
      * 
-     * @returns calories
+     * @return calories
      */
     public int getCalories() {
         return this.calories;
@@ -63,7 +63,7 @@ public class Item {
     /**
      * gets the quantity of an item
      * 
-     * @returns quantity
+     * @return quantity
      */
     public int getQuantity() {
         return this.quantity;

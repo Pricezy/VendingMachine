@@ -534,7 +534,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="buttonRP1" min="-2" pref="50" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="buttonRP2" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <Component id="buttonRP5" min="-2" pref="50" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="buttonRP10" min="-2" pref="51" max="-2" attributes="0"/>
                                           </Group>
@@ -627,7 +627,7 @@
                           <Component id="labelAdd" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="buttonRP1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="buttonRP2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonRP5" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="buttonRP10" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="buttonRPIncrease" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -718,7 +718,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSkittleActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonRP2">
+        <Component class="javax.swing.JButton" name="buttonRP5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -726,7 +726,7 @@
             <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRP2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRP5ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonFitbar">
@@ -1532,48 +1532,40 @@
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                  <Component id="labelMSPAll" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="buttonMSP20" min="-2" pref="50" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="buttonMSP50" min="-2" pref="50" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="buttonMSP100" min="-2" pref="51" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="buttonMSP1" min="-2" pref="50" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="buttonMSP5" min="-2" pref="50" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="buttonMSP10" min="-2" pref="51" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                                          <Component id="buttonMSP20" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Component id="buttonMSP50" min="-2" pref="50" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="buttonMSPMinus" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="buttonMSPAdd" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="buttonMSP100" min="-2" pref="51" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="labelMSCashQty" min="-2" max="-2" attributes="0"/>
-                                              <Component id="buttonMSPGetMoney" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="buttonMSP1" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="buttonMSP5" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="buttonMSP10" min="-2" pref="51" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="buttonMSPMinus" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="buttonMSPAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="labelMSCashQty" min="-2" max="-2" attributes="0"/>
+                                      <Component id="buttonMSPGetMoney" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -1671,10 +1663,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelMSCashQty" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelMSPAll" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonMSLogs" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="buttonMSLogs" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="132" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -1822,11 +1811,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonMSPGetMoneyActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="labelMSPAll">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x20b1; 1:     &#x20b1; 5:    &#x20b1; 10:    &#x20b1; 20:    &#x20b1; 50:    &#x20b1; 100:  "/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="buttonBackSMainte">
           <Properties>
@@ -2036,48 +2020,43 @@
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="buttonMRP1" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="labelMRAdd" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="buttonMRP5" min="-2" pref="50" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="buttonMRP10" min="-2" pref="51" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="buttonMRP20" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="buttonGetMoney" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="buttonMRP50" min="-2" pref="50" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="buttonMRP100" min="-2" pref="51" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Component id="labelMRCashQty" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
+                          <Component id="buttonMRP1" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="buttonMRPMinus" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="buttonMRPAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelMRAdd" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="buttonMRP5" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="buttonMRP10" min="-2" pref="51" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <Component id="labelMRPAll" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="buttonMRP20" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="buttonGetMoney" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="buttonMRP50" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="buttonMRP100" min="-2" pref="51" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="labelMRCashQty" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="buttonMRPMinus" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonMRPAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
@@ -2144,7 +2123,7 @@
                       </Group>
                       <Component id="buttonMRSoda" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="labelMRAdd" min="-2" max="-2" attributes="0"/>
@@ -2166,8 +2145,6 @@
                           <Component id="buttonGetMoney" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="labelMRCashQty" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="labelMRPAll" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -2192,7 +2169,7 @@
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="buttonMRLogs" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2406,11 +2383,6 @@
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot;Quantity: &quot;+nCashQty&#xa;    " type="code"/>
             </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="labelMRPAll">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x20b1; 1:     &#x20b1; 5:    &#x20b1; 10:    &#x20b1; 20:    &#x20b1; 50:    &#x20b1; 100:  "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="buttonBackMainte">

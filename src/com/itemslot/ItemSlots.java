@@ -14,7 +14,7 @@ public class ItemSlots {
     /**
      * gets the list of items in the slot
      * 
-     * @return ArrayList<Item>
+     * @return this.itemSlot
      */
     public ArrayList<Item> getItemSlot() {
         return this.itemSlot;

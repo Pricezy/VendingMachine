@@ -60,7 +60,7 @@ public class GUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         List = new javax.swing.JPanel();
@@ -170,7 +170,6 @@ public class GUI extends javax.swing.JFrame {
         buttonMSPMinus = new javax.swing.JButton();
         labelMSCashQty = new javax.swing.JLabel();
         buttonMSPGetMoney = new javax.swing.JButton();
-        labelMSPAll = new javax.swing.JLabel();
         buttonBackSMainte = new javax.swing.JButton();
         buttonMSChangePriceAdd = new javax.swing.JButton();
         buttonMSChangePriceMinus = new javax.swing.JButton();
@@ -214,7 +213,6 @@ public class GUI extends javax.swing.JFrame {
         buttonMRPAdd = new javax.swing.JButton();
         buttonMRPMinus = new javax.swing.JButton();
         labelMRCashQty = new javax.swing.JLabel();
-        labelMRPAll = new javax.swing.JLabel();
         buttonBackMainte = new javax.swing.JButton();
         buttonMRChangePriceAdd = new javax.swing.JButton();
         buttonMRChangePriceMinus = new javax.swing.JButton();
@@ -241,29 +239,29 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout ListLayout = new javax.swing.GroupLayout(List);
         List.setLayout(ListLayout);
         ListLayout.setHorizontalGroup(
-                ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(ListLayout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addGroup(ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(47, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonList)
-                                .addContainerGap()));
+            ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonList)
+                .addContainerGap())
+        );
         ListLayout.setVerticalGroup(
-                ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(ListLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonList)
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(88, Short.MAX_VALUE)));
+            ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonList)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
 
         labelVending.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
         labelVending.setText("Vending Machine");
@@ -299,47 +297,38 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout MainMenuLayout = new javax.swing.GroupLayout(MainMenu);
         MainMenu.setLayout(MainMenuLayout);
         MainMenuLayout.setHorizontalGroup(
-                MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
-                                .addContainerGap(47, Short.MAX_VALUE)
-                                .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(labelVending, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout
-                                                .createSequentialGroup()
-                                                .addGroup(MainMenuLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(buttonCreate,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 250,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(buttonTest,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 250,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(buttonExit,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 250,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(25, 25, 25)))
-                                .addGap(53, 53, 53))
-                        .addGroup(MainMenuLayout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(labelWelcome)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelVending, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuLayout.createSequentialGroup()
+                        .addGroup(MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)))
+                .addGap(53, 53, 53))
+            .addGroup(MainMenuLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(labelWelcome)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         MainMenuLayout.setVerticalGroup(
-                MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(MainMenuLayout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(labelVending)
-                                .addGap(33, 33, 33)
-                                .addComponent(buttonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(labelWelcome)
-                                .addContainerGap(151, Short.MAX_VALUE)));
+            MainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainMenuLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(labelVending)
+                .addGap(33, 33, 33)
+                .addComponent(buttonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonTest, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(labelWelcome)
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
 
         Feature.setPreferredSize(new java.awt.Dimension(400, 600));
 
@@ -376,41 +365,33 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout FeatureLayout = new javax.swing.GroupLayout(Feature);
         Feature.setLayout(FeatureLayout);
         FeatureLayout.setHorizontalGroup(
-                FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(FeatureLayout.createSequentialGroup()
-                                .addContainerGap(73, Short.MAX_VALUE)
-                                .addGroup(FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeatureLayout
-                                                .createSequentialGroup()
-                                                .addGroup(FeatureLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                false)
-                                                        .addComponent(buttonTestMainteFeatures,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(buttonTestVendingFeatures,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 250,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(labelChoose))
-                                                .addGap(77, 77, 77))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                FeatureLayout.createSequentialGroup()
-                                                        .addComponent(buttonBackFeature)
-                                                        .addContainerGap()))));
+            FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FeatureLayout.createSequentialGroup()
+                .addContainerGap(73, Short.MAX_VALUE)
+                .addGroup(FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeatureLayout.createSequentialGroup()
+                        .addGroup(FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buttonTestMainteFeatures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonTestVendingFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelChoose))
+                        .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeatureLayout.createSequentialGroup()
+                        .addComponent(buttonBackFeature)
+                        .addContainerGap())))
+        );
         FeatureLayout.setVerticalGroup(
-                FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(FeatureLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonBackFeature)
-                                .addGap(69, 69, 69)
-                                .addComponent(labelChoose)
-                                .addGap(58, 58, 58)
-                                .addComponent(buttonTestVendingFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(buttonTestMainteFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(438, Short.MAX_VALUE)));
+            FeatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FeatureLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackFeature)
+                .addGap(69, 69, 69)
+                .addComponent(labelChoose)
+                .addGap(58, 58, 58)
+                .addComponent(buttonTestVendingFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(buttonTestMainteFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(438, Short.MAX_VALUE))
+        );
 
         RegularSpecial.setPreferredSize(new java.awt.Dimension(400, 600));
 
@@ -447,43 +428,35 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout RegularSpecialLayout = new javax.swing.GroupLayout(RegularSpecial);
         RegularSpecial.setLayout(RegularSpecialLayout);
         RegularSpecialLayout.setHorizontalGroup(
-                RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(RegularSpecialLayout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(RegularSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(labelChooseVM, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularSpecialLayout
-                                                .createSequentialGroup()
-                                                .addGroup(RegularSpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(buttonCreateSpec,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 250,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(buttonCreateReg,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 250,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(21, 21, 21)))
-                                .addContainerGap(50, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                RegularSpecialLayout.createSequentialGroup()
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(buttonBackCreate)
-                                        .addContainerGap()));
+            RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegularSpecialLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelChooseVM, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularSpecialLayout.createSequentialGroup()
+                        .addGroup(RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonCreateSpec, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonCreateReg, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularSpecialLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonBackCreate)
+                .addContainerGap())
+        );
         RegularSpecialLayout.setVerticalGroup(
-                RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(RegularSpecialLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonBackCreate)
-                                .addGap(98, 98, 98)
-                                .addComponent(labelChooseVM)
-                                .addGap(31, 31, 31)
-                                .addComponent(buttonCreateReg, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(buttonCreateSpec, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(172, Short.MAX_VALUE)));
+            RegularSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegularSpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackCreate)
+                .addGap(98, 98, 98)
+                .addComponent(labelChooseVM)
+                .addGap(31, 31, 31)
+                .addComponent(buttonCreateReg, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(buttonCreateSpec, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
+        );
 
         Regular.setBackground(new java.awt.Color(204, 255, 204));
         Regular.setForeground(new java.awt.Color(153, 255, 51));
@@ -496,7 +469,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelQty.setText("No. of items left: " + nItemQty);
+        labelQty.setText("No. of items left: " + nItemQty
+        );
 
         buttonRBurgerPatty.setText("Burger Patty");
         buttonRBurgerPatty.addActionListener(new java.awt.event.ActionListener() {
@@ -604,12 +578,12 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelPrice.setText("Price: " + dPrice);
+        labelPrice.setText("Price: "+dPrice);
 
         labelRegular.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         labelRegular.setText("Regular Vending Machine");
 
-        labelCalories.setText("Calories: " + nCal);
+        labelCalories.setText("Calories: "+nCal);
 
         labelName.setText("Name: ");
 
@@ -627,9 +601,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelCashQty.setText("Quantity: " + nCashQty);
+        labelCashQty.setText("Quantity: "+nCashQty
+        );
 
-        labelTotal.setText("Total Amount: " + totalAmount);
+        labelTotal.setText("Total Amount: "+totalAmount);
         labelTotal.setToolTipText("");
 
         buttonRAdd.setText("Add Money");
@@ -671,277 +646,159 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout RegularLayout = new javax.swing.GroupLayout(Regular);
         Regular.setLayout(RegularLayout);
         RegularLayout.setHorizontalGroup(
-                RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(RegularLayout.createSequentialGroup()
-                                .addContainerGap()
+            RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegularLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RegularLayout.createSequentialGroup()
                                 .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout
-                                                .createSequentialGroup()
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                                .addGroup(RegularLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                                                .addGap(23, 23, 23)
-                                                                                .addGroup(RegularLayout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                        .addComponent(buttonRCrackers,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                100,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(buttonIcedTea,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                100,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(buttonSkittle,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                100,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addGap(18, 18, 18)
-                                                                                .addGroup(RegularLayout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(RegularLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(
-                                                                                                        buttonFitbar,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(
-                                                                                                        buttonChocolate,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                        .addGroup(RegularLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(
-                                                                                                        buttonRBurgerPatty,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(
-                                                                                                        buttonRHotdog,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                        .addGroup(RegularLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(
-                                                                                                        buttonWater,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(
-                                                                                                        buttonSoda,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                                                .addGap(31, 31, 31)
-                                                                                .addComponent(labelRegular)))
-                                                                .addGap(0, 29, Short.MAX_VALUE))
-                                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                                .addComponent(labelBuy)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(labelChange,
-                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                        Short.MAX_VALUE)))
-                                                .addContainerGap())
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout
-                                                .createSequentialGroup()
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(labelCalories)
-                                                        .addComponent(labelPrice)
-                                                        .addComponent(labelName)
-                                                        .addComponent(labelQty)
-                                                        .addComponent(buttonRBuy))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                RegularLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING,
-                                                                        false)
-                                                                        .addGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                RegularLayout.createSequentialGroup()
-                                                                                        .addGroup(RegularLayout
-                                                                                                .createParallelGroup(
-                                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                .addGroup(
-                                                                                                        javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                        RegularLayout
-                                                                                                                .createSequentialGroup()
-                                                                                                                .addComponent(
-                                                                                                                        buttonRP20,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                        50,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addPreferredGap(
-                                                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                .addComponent(
-                                                                                                                        buttonRP50,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                        50,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addPreferredGap(
-                                                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                .addComponent(
-                                                                                                                        buttonRP100,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                        51,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                .addGroup(RegularLayout
-                                                                                                        .createSequentialGroup()
-                                                                                                        .addComponent(
-                                                                                                                buttonRP1,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonRP5,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonRP10,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                51,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                        .addPreferredGap(
-                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                        .addGroup(RegularLayout
-                                                                                                .createParallelGroup(
-                                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                .addComponent(
-                                                                                                        buttonRPDecrease)
-                                                                                                .addComponent(
-                                                                                                        buttonRPIncrease)))
-                                                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                                                .addGap(112, 112, 112)
-                                                                                .addComponent(labelTotal))
-                                                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                                                .addComponent(buttonRAdd)
-                                                                                .addPreferredGap(
-                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(buttonRGetChange,
-                                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                        Short.MAX_VALUE)))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                RegularLayout.createSequentialGroup()
-                                                                        .addComponent(labelCashQty)
-                                                                        .addGap(142, 142, 142))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                RegularLayout.createSequentialGroup()
-                                                                        .addComponent(labelAdd)
-                                                                        .addGap(66, 66, 66)))
-                                                .addGap(18, 18, 18))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout
-                                                .createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                RegularLayout.createSequentialGroup()
-                                                                        .addComponent(buttonBackRegular)
-                                                                        .addContainerGap())
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                RegularLayout.createSequentialGroup()
-                                                                        .addComponent(labelAllP)
-                                                                        .addGap(32, 32, 32)))))));
-        RegularLayout.setVerticalGroup(
-                RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(RegularLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonBackRegular)
-                                .addGap(14, 14, 14)
-                                .addComponent(labelRegular)
-                                .addGap(32, 32, 32)
-                                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(RegularLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(buttonWater, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(buttonIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(buttonSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(55, 55, 55)
-                                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                .addComponent(labelName)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(labelPrice)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(labelCalories)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(labelQty)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(buttonRBuy))
-                                        .addGroup(RegularLayout.createSequentialGroup()
-                                                .addComponent(labelAdd)
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonRP1)
-                                                        .addComponent(buttonRP5)
-                                                        .addComponent(buttonRP10)
-                                                        .addComponent(buttonRPIncrease))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonRP20)
-                                                        .addComponent(buttonRP50)
-                                                        .addComponent(buttonRP100)
-                                                        .addComponent(buttonRPDecrease))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonRAdd)
-                                                        .addComponent(buttonRGetChange))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(RegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(labelCashQty)
-                                                        .addComponent(labelTotal))))
+                                    .addGroup(RegularLayout.createSequentialGroup()
+                                        .addGap(23, 23, 23)
+                                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(buttonRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(RegularLayout.createSequentialGroup()
+                                                .addComponent(buttonFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(RegularLayout.createSequentialGroup()
+                                                .addComponent(buttonRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(RegularLayout.createSequentialGroup()
+                                                .addComponent(buttonWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(RegularLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(labelRegular)))
+                                .addGap(0, 29, Short.MAX_VALUE))
+                            .addGroup(RegularLayout.createSequentialGroup()
+                                .addComponent(labelBuy)
                                 .addGap(18, 18, 18)
-                                .addGroup(RegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(labelBuy, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(labelChange))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelCalories)
+                            .addComponent(labelPrice)
+                            .addComponent(labelName)
+                            .addComponent(labelQty)
+                            .addComponent(buttonRBuy))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                    .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                            .addComponent(buttonRP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(RegularLayout.createSequentialGroup()
+                                            .addComponent(buttonRP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonRP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(buttonRPDecrease)
+                                        .addComponent(buttonRPIncrease)))
+                                .addGroup(RegularLayout.createSequentialGroup()
+                                    .addGap(112, 112, 112)
+                                    .addComponent(labelTotal))
+                                .addGroup(RegularLayout.createSequentialGroup()
+                                    .addComponent(buttonRAdd)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(buttonRGetChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                .addComponent(labelCashQty)
+                                .addGap(142, 142, 142))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                .addComponent(labelAdd)
+                                .addGap(66, 66, 66)))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
+                                .addComponent(buttonBackRegular)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegularLayout.createSequentialGroup()
                                 .addComponent(labelAllP)
-                                .addContainerGap(81, Short.MAX_VALUE)));
+                                .addGap(32, 32, 32))))))
+        );
+        RegularLayout.setVerticalGroup(
+            RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RegularLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackRegular)
+                .addGap(14, 14, 14)
+                .addComponent(labelRegular)
+                .addGap(32, 32, 32)
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonWater, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(RegularLayout.createSequentialGroup()
+                        .addComponent(labelName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelPrice)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelCalories)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelQty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonRBuy))
+                    .addGroup(RegularLayout.createSequentialGroup()
+                        .addComponent(labelAdd)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonRP1)
+                            .addComponent(buttonRP5)
+                            .addComponent(buttonRP10)
+                            .addComponent(buttonRPIncrease))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonRP20)
+                            .addComponent(buttonRP50)
+                            .addComponent(buttonRP100)
+                            .addComponent(buttonRPDecrease))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonRAdd)
+                            .addComponent(buttonRGetChange))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCashQty)
+                            .addComponent(labelTotal))))
+                .addGap(18, 18, 18)
+                .addGroup(RegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelBuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelChange))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelAllP)
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
 
         labelPrice.setText("Price: " + dPrice);
 
@@ -956,7 +813,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelSQty.setText("No. of items left: " + nItemQty);
+        labelSQty.setText("No. of items left: " + nItemQty
+        );
 
         buttonSBurgerPatty.setText("Burger Patty");
         buttonSBurgerPatty.addActionListener(new java.awt.event.ActionListener() {
@@ -1064,12 +922,12 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelSPrice.setText("Price: " + dPrice);
+        labelSPrice.setText("Price: "+dPrice);
 
         labelRegular1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         labelRegular1.setText("Special Vending Machine");
 
-        labelSCalories.setText("Calories: " + nCal);
+        labelSCalories.setText("Calories: "+nCal);
 
         labelSName.setText("Name: ");
 
@@ -1087,9 +945,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelSCashQty.setText("Quantity: " + nCashQty);
+        labelSCashQty.setText("Quantity: "+nCashQty
+        );
 
-        labelSTotal.setText("Total Amount: " + totalAmount);
+        labelSTotal.setText("Total Amount: "+totalAmount);
         labelSTotal.setToolTipText("");
 
         buttonSAdd.setText("Add Money");
@@ -1152,287 +1011,172 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout SpecialLayout = new javax.swing.GroupLayout(Special);
         Special.setLayout(SpecialLayout);
         SpecialLayout.setHorizontalGroup(
-                SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(SpecialLayout.createSequentialGroup()
-                                .addContainerGap()
+            SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SpecialLayout.createSequentialGroup()
                                 .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout
-                                                .createSequentialGroup()
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                                .addGroup(SpecialLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                                                .addGap(23, 23, 23)
-                                                                                .addGroup(SpecialLayout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                        .addComponent(buttonSCrackers,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                100,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(buttonSpecIcedTea,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                100,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(buttonMustard,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                100,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addGap(18, 18, 18)
-                                                                                .addGroup(SpecialLayout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(SpecialLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(
-                                                                                                        buttonCatsup,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(
-                                                                                                        buttonMayonnaise,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                        .addGroup(SpecialLayout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(
-                                                                                                        buttonSBurgerPatty,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(
-                                                                                                        buttonSHotdog,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                        100,
-                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                                                .addGap(31, 31, 31)
-                                                                                .addComponent(labelRegular1))
-                                                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                                                .addGap(141, 141, 141)
-                                                                                .addComponent(buttonSpecWater,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                        100,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addGap(18, 18, 18)
-                                                                                .addComponent(buttonSpecSoda,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                        100,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                .addGap(0, 29, Short.MAX_VALUE))
-                                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                                .addComponent(labelSBuy)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(labelSChange,
-                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                        Short.MAX_VALUE)))
-                                                .addContainerGap())
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout
-                                                .createSequentialGroup()
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(labelSCalories)
-                                                        .addComponent(labelSPrice)
-                                                        .addComponent(labelSName)
-                                                        .addComponent(labelSQty)
-                                                        .addComponent(buttonSBuy))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                        107, Short.MAX_VALUE)
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                SpecialLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                SpecialLayout.createSequentialGroup()
-                                                                                        .addGroup(SpecialLayout
-                                                                                                .createParallelGroup(
-                                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                .addGroup(
-                                                                                                        javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                        SpecialLayout
-                                                                                                                .createSequentialGroup()
-                                                                                                                .addComponent(
-                                                                                                                        buttonSP20,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                        50,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addPreferredGap(
-                                                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                .addComponent(
-                                                                                                                        buttonSP50,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                        50,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addPreferredGap(
-                                                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                .addComponent(
-                                                                                                                        buttonSP100,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                        51,
-                                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                .addGroup(SpecialLayout
-                                                                                                        .createSequentialGroup()
-                                                                                                        .addComponent(
-                                                                                                                buttonSP1,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonSP5,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonSP10,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                51,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                        .addPreferredGap(
-                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                        .addGroup(SpecialLayout
-                                                                                                .createParallelGroup(
-                                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                .addComponent(
-                                                                                                        buttonSPDecrease)
-                                                                                                .addComponent(
-                                                                                                        buttonSPIncrease)))
-                                                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                                                .addGap(6, 6, 6)
-                                                                                .addComponent(labelSCashQty)
-                                                                                .addGap(36, 36, 36)
-                                                                                .addComponent(labelSTotal))
-                                                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                                                .addComponent(buttonSAdd)
-                                                                                .addPreferredGap(
-                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(buttonSGetChange)))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                SpecialLayout.createSequentialGroup()
-                                                                        .addComponent(buttonSAddMoney)
-                                                                        .addGap(66, 66, 66)))
-                                                .addGap(18, 18, 18))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout
-                                                .createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                SpecialLayout.createSequentialGroup()
-                                                                        .addComponent(buttonBackRegular1)
-                                                                        .addContainerGap())
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                SpecialLayout.createSequentialGroup()
-                                                                        .addComponent(labelSAllP)
-                                                                        .addGap(16, 16, 16))))))
-                        .addGroup(SpecialLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(buttonHotdogSandwich)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(SpecialLayout.createSequentialGroup()
+                                        .addGap(23, 23, 23)
+                                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(buttonSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(buttonMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(SpecialLayout.createSequentialGroup()
+                                                .addComponent(buttonCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(SpecialLayout.createSequentialGroup()
+                                                .addComponent(buttonSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(buttonSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(SpecialLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(labelRegular1))
+                                    .addGroup(SpecialLayout.createSequentialGroup()
+                                        .addGap(141, 141, 141)
+                                        .addComponent(buttonSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(buttonSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 29, Short.MAX_VALUE))
+                            .addGroup(SpecialLayout.createSequentialGroup()
+                                .addComponent(labelSBuy)
                                 .addGap(18, 18, 18)
-                                .addComponent(buttonFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 112,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)));
-        SpecialLayout.setVerticalGroup(
-                SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(SpecialLayout.createSequentialGroup()
-                                .addContainerGap()
+                                .addComponent(labelSChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelSCalories)
+                            .addComponent(labelSPrice)
+                            .addComponent(labelSName)
+                            .addComponent(labelSQty)
+                            .addComponent(buttonSBuy))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                    .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                            .addComponent(buttonSP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(SpecialLayout.createSequentialGroup()
+                                            .addComponent(buttonSP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(buttonSP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(buttonSPDecrease)
+                                        .addComponent(buttonSPIncrease)))
+                                .addGroup(SpecialLayout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(labelSCashQty)
+                                    .addGap(36, 36, 36)
+                                    .addComponent(labelSTotal))
+                                .addGroup(SpecialLayout.createSequentialGroup()
+                                    .addComponent(buttonSAdd)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(buttonSGetChange)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                                .addComponent(buttonSAddMoney)
+                                .addGap(66, 66, 66)))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
                                 .addComponent(buttonBackRegular1)
-                                .addGap(14, 14, 14)
-                                .addComponent(labelRegular1)
-                                .addGap(32, 32, 32)
-                                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(buttonSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(SpecialLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(buttonSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(buttonSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonHotdogSandwich, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                .addComponent(labelSName)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(labelSPrice)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(labelSCalories)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(labelSQty)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(buttonSBuy))
-                                        .addGroup(SpecialLayout.createSequentialGroup()
-                                                .addComponent(buttonSAddMoney)
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonSP1)
-                                                        .addComponent(buttonSP5)
-                                                        .addComponent(buttonSP10)
-                                                        .addComponent(buttonSPIncrease))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonSP20)
-                                                        .addComponent(buttonSP50)
-                                                        .addComponent(buttonSP100)
-                                                        .addComponent(buttonSPDecrease))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonSAdd)
-                                                        .addComponent(buttonSGetChange))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(SpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(labelSCashQty)
-                                                        .addComponent(labelSTotal))))
-                                .addGap(18, 18, 18)
-                                .addGroup(SpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(labelSBuy, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(labelSChange))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SpecialLayout.createSequentialGroup()
                                 .addComponent(labelSAllP)
-                                .addContainerGap(126, Short.MAX_VALUE)));
+                                .addGap(16, 16, 16))))))
+            .addGroup(SpecialLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(buttonHotdogSandwich)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        SpecialLayout.setVerticalGroup(
+            SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackRegular1)
+                .addGap(14, 14, 14)
+                .addComponent(labelRegular1)
+                .addGap(32, 32, 32)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonHotdogSandwich, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(SpecialLayout.createSequentialGroup()
+                        .addComponent(labelSName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelSPrice)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelSCalories)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelSQty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonSBuy))
+                    .addGroup(SpecialLayout.createSequentialGroup()
+                        .addComponent(buttonSAddMoney)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonSP1)
+                            .addComponent(buttonSP5)
+                            .addComponent(buttonSP10)
+                            .addComponent(buttonSPIncrease))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonSP20)
+                            .addComponent(buttonSP50)
+                            .addComponent(buttonSP100)
+                            .addComponent(buttonSPDecrease))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonSAdd)
+                            .addComponent(buttonSGetChange))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelSCashQty)
+                            .addComponent(labelSTotal))))
+                .addGap(18, 18, 18)
+                .addGroup(SpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelSBuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelSChange))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelSAllP)
+                .addContainerGap(126, Short.MAX_VALUE))
+        );
 
         labelPrice.setText("Price: " + dPrice);
 
@@ -1440,7 +1184,8 @@ public class GUI extends javax.swing.JFrame {
         MaintenanceSpecial.setForeground(new java.awt.Color(153, 255, 51));
         MaintenanceSpecial.setPreferredSize(new java.awt.Dimension(400, 600));
 
-        labelMSQty.setText("Items left: " + nItemQty);
+        labelMSQty.setText("Items left: " + nItemQty
+        );
 
         labelMSReplenish.setText("Replenish Money:");
 
@@ -1492,12 +1237,12 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelMSPrice.setText("Price: " + dPrice);
+        labelMSPrice.setText("Price: "+dPrice);
 
         labelMainteSpecial.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         labelMainteSpecial.setText("Maintenance Vending Machine");
 
-        labelMSCalories.setText("Calories: " + nCal);
+        labelMSCalories.setText("Calories: "+nCal);
 
         labelMSName.setText("Name: ");
 
@@ -1515,7 +1260,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelMSCashQty.setText("Quantity: " + nCashQty);
+        labelMSCashQty.setText("Quantity: "+nCashQty
+        );
 
         buttonMSPGetMoney.setText("Get Money");
         buttonMSPGetMoney.addActionListener(new java.awt.event.ActionListener() {
@@ -1523,8 +1269,6 @@ public class GUI extends javax.swing.JFrame {
                 buttonMSPGetMoneyActionPerformed(evt);
             }
         });
-
-        labelMSPAll.setText("₱ 1:     ₱ 5:    ₱ 10:    ₱ 20:    ₱ 50:    ₱ 100:  ");
 
         buttonBackSMainte.setText("Go Back");
         buttonBackSMainte.addActionListener(new java.awt.event.ActionListener() {
@@ -1659,272 +1403,166 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout MaintenanceSpecialLayout = new javax.swing.GroupLayout(MaintenanceSpecial);
         MaintenanceSpecial.setLayout(MaintenanceSpecialLayout);
         MaintenanceSpecialLayout.setHorizontalGroup(
-                MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(MaintenanceSpecialLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(buttonBackSMainte)
-                                                .addComponent(labelMainteSpecial))
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addGap(13, 13, 13)
-                                                .addGroup(MaintenanceSpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(buttonMSCrackers,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(buttonMSpecIcedTea,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(buttonMSMustard,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(MaintenanceSpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                                .addComponent(buttonMSCatsup,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(buttonMSMayonnaise,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                                .addComponent(buttonMSBurgerPatty,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(buttonMSHotdog,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addGap(131, 131, 131)
-                                                .addComponent(buttonMSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(buttonMSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addComponent(buttonMHotdogSandwich)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(buttonMHamburger, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(buttonMFishNCrackers,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 112,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(14, Short.MAX_VALUE))
-                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(labelMSName)
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addComponent(labelMSPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 76,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(buttonMSChangePriceAdd)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(buttonMSChangePriceMinus))
-                                        .addComponent(labelMSCalories)
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addComponent(labelMSQty)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(buttonMSChangeQtyAdd)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(buttonMSChangeQtyMinus))
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(buttonMSLogs)))
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addGroup(MaintenanceSpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                                .addGap(22, 22, 22)
-                                                                .addComponent(labelMSPAll))
-                                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                                .addGap(37, 37, 37)
-                                                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addGroup(MaintenanceSpecialLayout
-                                                                                .createSequentialGroup()
-                                                                                .addGroup(MaintenanceSpecialLayout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                MaintenanceSpecialLayout
-                                                                                                        .createSequentialGroup()
-                                                                                                        .addComponent(
-                                                                                                                buttonMSP20,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonMSP50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonMSP100,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                51,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                        .addGroup(
-                                                                                                MaintenanceSpecialLayout
-                                                                                                        .createSequentialGroup()
-                                                                                                        .addComponent(
-                                                                                                                buttonMSP1,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonMSP5,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                50,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addComponent(
-                                                                                                                buttonMSP10,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                51,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                .addPreferredGap(
-                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addGroup(MaintenanceSpecialLayout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addComponent(buttonMSPMinus)
-                                                                                        .addComponent(buttonMSPAdd)))
-                                                                        .addGroup(MaintenanceSpecialLayout
-                                                                                .createSequentialGroup()
-                                                                                .addGroup(MaintenanceSpecialLayout
-                                                                                        .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addComponent(labelMSCashQty)
-                                                                                        .addComponent(
-                                                                                                buttonMSPGetMoney))
-                                                                                .addGap(54, 54, 54)))))
-                                                .addGap(0, 31, Short.MAX_VALUE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceSpecialLayout
-                                                .createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(labelMSReplenish)
-                                                .addGap(87, 87, 87)))));
-        MaintenanceSpecialLayout.setVerticalGroup(
-                MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonBackSMainte)
-                                .addGap(22, 22, 22)
-                                .addComponent(labelMainteSpecial)
+            MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(buttonBackSMainte)
+                        .addComponent(labelMainteSpecial))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonMSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonMSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonMSMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addComponent(buttonMSCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonMSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(buttonMSMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addComponent(buttonMSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonMSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(buttonMSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonMSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addComponent(buttonMHotdogSandwich)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonMFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelMSName)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addComponent(labelMSPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSChangePriceAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSChangePriceMinus))
+                    .addComponent(labelMSCalories)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addComponent(labelMSQty)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonMSChangeQtyAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSChangeQtyMinus))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(buttonMSLogs)))
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceSpecialLayout.createSequentialGroup()
+                                        .addComponent(buttonMSP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonMSP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonMSP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                        .addComponent(buttonMSP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonMSP5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonMSP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonMSMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMSCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMSMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonMSPMinus)
+                                    .addComponent(buttonMSPAdd)))
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelMSCashQty)
+                                    .addComponent(buttonMSPGetMoney))
+                                .addGap(54, 54, 54)))
+                        .addGap(0, 37, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceSpecialLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelMSReplenish)
+                        .addGap(87, 87, 87))))
+        );
+        MaintenanceSpecialLayout.setVerticalGroup(
+            MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackSMainte)
+                .addGap(22, 22, 22)
+                .addComponent(labelMainteSpecial)
+                .addGap(18, 18, 18)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMSBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMSMustard, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSCatsup, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMSMayonnaise, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonMSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonMSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonMSpecIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMHotdogSandwich, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(buttonMSChangePriceAdd)
+                                    .addComponent(buttonMSChangePriceMinus)))
+                            .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(labelMSPrice))
+                                    .addComponent(labelMSName))
+                                .addGap(7, 7, 7)
+                                .addComponent(labelMSCalories)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(buttonMSpecSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(MaintenanceSpecialLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(buttonMSpecWater, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(buttonMSpecIcedTea,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonMHotdogSandwich, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMHamburger, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMFishNCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 35,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addGap(39, 39, 39)
-                                                .addGroup(MaintenanceSpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                                .addGap(16, 16, 16)
-                                                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(buttonMSChangePriceAdd)
-                                                                        .addComponent(buttonMSChangePriceMinus)))
-                                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(MaintenanceSpecialLayout
-                                                                                .createSequentialGroup()
-                                                                                .addGap(22, 22, 22)
-                                                                                .addComponent(labelMSPrice))
-                                                                        .addComponent(labelMSName))
-                                                                .addGap(7, 7, 7)
-                                                                .addComponent(labelMSCalories)
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(labelMSQty)
-                                                                        .addComponent(buttonMSChangeQtyAdd)
-                                                                        .addComponent(buttonMSChangeQtyMinus)))))
-                                        .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
-                                                .addGap(33, 33, 33)
-                                                .addComponent(labelMSReplenish)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(MaintenanceSpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonMSP1)
-                                                        .addComponent(buttonMSP5)
-                                                        .addComponent(buttonMSP10)
-                                                        .addComponent(buttonMSPAdd))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(MaintenanceSpecialLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonMSP20)
-                                                        .addComponent(buttonMSP50)
-                                                        .addComponent(buttonMSP100)
-                                                        .addComponent(buttonMSPMinus))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(buttonMSPGetMoney)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelMSCashQty)
-                                .addGap(24, 24, 24)
-                                .addGroup(MaintenanceSpecialLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(labelMSPAll)
-                                        .addComponent(buttonMSLogs))
-                                .addContainerGap(132, Short.MAX_VALUE)));
+                                .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(labelMSQty)
+                                    .addComponent(buttonMSChangeQtyAdd)
+                                    .addComponent(buttonMSChangeQtyMinus)))))
+                    .addGroup(MaintenanceSpecialLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(labelMSReplenish)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMSP1)
+                            .addComponent(buttonMSP5)
+                            .addComponent(buttonMSP10)
+                            .addComponent(buttonMSPAdd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MaintenanceSpecialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMSP20)
+                            .addComponent(buttonMSP50)
+                            .addComponent(buttonMSP100)
+                            .addComponent(buttonMSPMinus))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMSPGetMoney)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelMSCashQty)
+                .addGap(24, 24, 24)
+                .addComponent(buttonMSLogs)
+                .addContainerGap(132, Short.MAX_VALUE))
+        );
 
         labelPrice.setText("Price: " + dPrice);
 
@@ -1939,7 +1577,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelMRQty.setText("Items left: " + nItemQty);
+        labelMRQty.setText("Items left: " + nItemQty
+        );
 
         buttonMRBurgerPatty.setText("Burger Patty");
         buttonMRBurgerPatty.addActionListener(new java.awt.event.ActionListener() {
@@ -2047,12 +1686,12 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelMRPrice.setText("Price: " + dPrice);
+        labelMRPrice.setText("Price: "+dPrice);
 
         labelMainteRegular.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         labelMainteRegular.setText("Maintenance Vending Machine");
 
-        labelMRCalories.setText("Calories: " + nCal);
+        labelMRCalories.setText("Calories: "+nCal);
 
         labelMRName.setText("Name: ");
 
@@ -2070,9 +1709,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        labelMRCashQty.setText("Quantity: " + nCashQty);
-
-        labelMRPAll.setText("₱ 1:     ₱ 5:    ₱ 10:    ₱ 20:    ₱ 50:    ₱ 100:  ");
+        labelMRCashQty.setText("Quantity: "+nCashQty
+        );
 
         buttonBackMainte.setText("Go Back");
         buttonBackMainte.addActionListener(new java.awt.event.ActionListener() {
@@ -2130,344 +1768,215 @@ public class GUI extends javax.swing.JFrame {
         javax.swing.GroupLayout MaintenanceRegularLayout = new javax.swing.GroupLayout(MaintenanceRegular);
         MaintenanceRegular.setLayout(MaintenanceRegularLayout);
         MaintenanceRegularLayout.setHorizontalGroup(
-                MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                .addGroup(MaintenanceRegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                                .addGroup(MaintenanceRegularLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(labelMRCalories)
-                                                                        .addComponent(labelMRQty,
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING))
-                                                                .addGap(0, 0, Short.MAX_VALUE))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                MaintenanceRegularLayout.createSequentialGroup()
-                                                                        .addGap(0, 0, Short.MAX_VALUE)
-                                                                        .addComponent(labelMRPrice,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                76,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                                .addComponent(buttonMRChangePriceAdd)
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(buttonMRChangePriceMinus))
-                                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                                .addComponent(buttonMRChangeQtyAdd)
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(buttonMRChangeQtyMinus)))
-                                                .addGap(16, 16, 16))
-                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(labelMRName)
-                                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addComponent(buttonMRLogs)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(MaintenanceRegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                                .addComponent(buttonMRP1,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(MaintenanceRegularLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(labelMRAdd)
-                                                                        .addGroup(MaintenanceRegularLayout
-                                                                                .createSequentialGroup()
-                                                                                .addComponent(buttonMRP5,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                        50,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addPreferredGap(
-                                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(buttonMRP10,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                        51,
-                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                MaintenanceRegularLayout.createSequentialGroup()
-                                                                        .addComponent(buttonMRP20,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                50,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                        .addGroup(MaintenanceRegularLayout
-                                                                                .createParallelGroup(
-                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(buttonGetMoney)
-                                                                                .addGroup(MaintenanceRegularLayout
-                                                                                        .createSequentialGroup()
-                                                                                        .addComponent(buttonMRP50,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                50,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addPreferredGap(
-                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                        .addComponent(buttonMRP100,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                51,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addGroup(MaintenanceRegularLayout
-                                                                                        .createSequentialGroup()
-                                                                                        .addGap(6, 6, 6)
-                                                                                        .addComponent(
-                                                                                                labelMRCashQty)))))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(buttonMRPMinus)
-                                                        .addComponent(buttonMRPAdd)))
-                                        .addComponent(labelMRPAll))
-                                .addGap(34, 34, 34))
-                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+            MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelMRCalories)
+                                    .addComponent(labelMRQty, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceRegularLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(labelMRPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRChangePriceAdd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonMRChangePriceMinus))
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRChangeQtyAdd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonMRChangeQtyMinus)))
+                        .addGap(16, 16, 16))
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelMRName)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(MaintenanceRegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(buttonBackMainte)
-                                        .addGroup(MaintenanceRegularLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                        .addGap(23, 23, 23)
-                                                        .addGroup(MaintenanceRegularLayout
-                                                                .createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                .addComponent(buttonMRCrackers,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(buttonMRIcedTea,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(buttonMRSkittle,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGap(18, 18, 18)
-                                                        .addGroup(MaintenanceRegularLayout
-                                                                .createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addGroup(MaintenanceRegularLayout
-                                                                        .createSequentialGroup()
-                                                                        .addComponent(buttonMRFitbar,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                100,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addGap(18, 18, 18)
-                                                                        .addComponent(buttonMRChocolate,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                100,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGroup(MaintenanceRegularLayout
-                                                                        .createSequentialGroup()
-                                                                        .addComponent(buttonMRBurgerPatty,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                100,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addGap(18, 18, 18)
-                                                                        .addComponent(buttonMRHotdog,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                100,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGroup(MaintenanceRegularLayout
-                                                                        .createSequentialGroup()
-                                                                        .addComponent(buttonMRWater,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                100,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addGap(18, 18, 18)
-                                                                        .addComponent(buttonMRSoda,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                100,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addComponent(labelMainteRegular)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+                                .addComponent(buttonMRLogs)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(15, 15, 15)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addComponent(buttonMRP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelMRAdd)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRP5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonMRP10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenanceRegularLayout.createSequentialGroup()
+                        .addComponent(buttonMRP20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonGetMoney)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(buttonMRP50, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonMRP100, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(labelMRCashQty)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonMRPMinus)
+                    .addComponent(buttonMRPAdd))
+                .addGap(40, 40, 40))
+            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonBackMainte)
+                    .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                            .addGap(23, 23, 23)
+                            .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(buttonMRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonMRIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonMRSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                    .addComponent(buttonMRFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(buttonMRChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                    .addComponent(buttonMRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(buttonMRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                    .addComponent(buttonMRWater, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(buttonMRSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(labelMainteRegular)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         MaintenanceRegularLayout.setVerticalGroup(
-                MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonBackMainte)
-                                .addGap(22, 22, 22)
-                                .addComponent(labelMainteRegular)
-                                .addGap(18, 18, 18)
-                                .addGroup(MaintenanceRegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonMRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(MaintenanceRegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(buttonMRSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMRFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(buttonMRChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(MaintenanceRegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(MaintenanceRegularLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(buttonMRWater, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(buttonMRIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(buttonMRSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(MaintenanceRegularLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                .addGap(67, 67, 67)
-                                                .addComponent(labelMRAdd)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonMRP1)
-                                                        .addComponent(buttonMRP5)
-                                                        .addComponent(buttonMRP10)
-                                                        .addComponent(buttonMRPAdd))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(buttonMRP20)
-                                                        .addComponent(buttonMRP50)
-                                                        .addComponent(buttonMRP100)
-                                                        .addComponent(buttonMRPMinus))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(buttonGetMoney)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(labelMRCashQty)
-                                                .addGap(22, 22, 22)
-                                                .addComponent(labelMRPAll))
-                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                .addGap(58, 58, 58)
-                                                .addComponent(labelMRName)
-                                                .addGap(17, 17, 17)
-                                                .addGroup(MaintenanceRegularLayout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                                .addGroup(MaintenanceRegularLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(buttonMRChangePriceAdd)
-                                                                        .addComponent(buttonMRChangePriceMinus)
-                                                                        .addComponent(labelMRPrice))
-                                                                .addGap(41, 41, 41)
-                                                                .addGroup(MaintenanceRegularLayout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(buttonMRChangeQtyAdd)
-                                                                        .addComponent(buttonMRChangeQtyMinus)
-                                                                        .addComponent(labelMRQty)))
-                                                        .addGroup(MaintenanceRegularLayout.createSequentialGroup()
-                                                                .addComponent(labelMRCalories)
-                                                                .addGap(38, 38, 38)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(buttonMRLogs)))
-                                .addContainerGap(91, Short.MAX_VALUE)));
+            MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buttonBackMainte)
+                .addGap(22, 22, 22)
+                .addComponent(labelMainteRegular)
+                .addGap(18, 18, 18)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMRBurgerPatty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRCrackers, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRHotdog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonMRSkittle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRFitbar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMRChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonMRWater, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonMRIcedTea, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonMRSoda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(labelMRAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMRP1)
+                            .addComponent(buttonMRP5)
+                            .addComponent(buttonMRP10)
+                            .addComponent(buttonMRPAdd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonMRP20)
+                            .addComponent(buttonMRP50)
+                            .addComponent(buttonMRP100)
+                            .addComponent(buttonMRPMinus))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonGetMoney)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelMRCashQty))
+                    .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(labelMRName)
+                        .addGap(17, 17, 17)
+                        .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(buttonMRChangePriceAdd)
+                                    .addComponent(buttonMRChangePriceMinus)
+                                    .addComponent(labelMRPrice))
+                                .addGap(41, 41, 41)
+                                .addGroup(MaintenanceRegularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(buttonMRChangeQtyAdd)
+                                    .addComponent(buttonMRChangeQtyMinus)
+                                    .addComponent(labelMRQty)))
+                            .addGroup(MaintenanceRegularLayout.createSequentialGroup()
+                                .addComponent(labelMRCalories)
+                                .addGap(38, 38, 38)))
+                        .addGap(35, 35, 35)
+                        .addComponent(buttonMRLogs)))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
 
         labelPrice.setText("Price: " + dPrice);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(MainMenu, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(RegularSpecial, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(Regular, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(MaintenanceRegular,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(Special, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(MaintenanceSpecial,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 12, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Feature, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 12, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(MainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(RegularSpecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Regular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(MaintenanceRegular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Special, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(MaintenanceSpecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 12, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(Feature, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 12, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(MainMenu, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(RegularSpecial, javax.swing.GroupLayout.DEFAULT_SIZE, 2412,
-                                                Short.MAX_VALUE)
-                                        .addContainerGap()))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Regular, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Special, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(MaintenanceRegular, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(MaintenanceSpecial, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Feature, javax.swing.GroupLayout.PREFERRED_SIZE, 864,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(MainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addComponent(RegularSpecial, javax.swing.GroupLayout.DEFAULT_SIZE, 2412, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(Regular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Special, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(MaintenanceRegular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(MaintenanceSpecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(Feature, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         setSize(new java.awt.Dimension(416, 608));
         setLocationRelativeTo(null);
@@ -2806,7 +2315,12 @@ public class GUI extends javax.swing.JFrame {
         nItemQty = itemSlots.get(i).getQuantity();
         labelQty.setText("Quantity: " + nItemQty);
     }// GEN-LAST:event_buttonIcedTeaActionPerformed
-
+    
+    /**
+     * This button selects the 20 peso denomination.
+     * 
+     * @param evt
+     */
     private void buttonRP20ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonRP20ActionPerformed
         // TODO add your handling code here:
         nCash = 20;
@@ -4550,8 +4064,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton buttonRP1;
     private javax.swing.JButton buttonRP10;
     private javax.swing.JButton buttonRP100;
-    private javax.swing.JButton buttonRP5;
     private javax.swing.JButton buttonRP20;
+    private javax.swing.JButton buttonRP5;
     private javax.swing.JButton buttonRP50;
     private javax.swing.JButton buttonRPDecrease;
     private javax.swing.JButton buttonRPIncrease;
@@ -4594,13 +4108,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel labelMRCalories;
     private javax.swing.JLabel labelMRCashQty;
     private javax.swing.JLabel labelMRName;
-    private javax.swing.JLabel labelMRPAll;
     private javax.swing.JLabel labelMRPrice;
     private javax.swing.JLabel labelMRQty;
     private javax.swing.JLabel labelMSCalories;
     private javax.swing.JLabel labelMSCashQty;
     private javax.swing.JLabel labelMSName;
-    private javax.swing.JLabel labelMSPAll;
     private javax.swing.JLabel labelMSPrice;
     private javax.swing.JLabel labelMSQty;
     private javax.swing.JLabel labelMSReplenish;
