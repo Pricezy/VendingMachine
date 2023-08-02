@@ -32,19 +32,6 @@ public class Cash {
         this.quantities.add(0);
     }
 
-    /**
-     * adds cash to the list of quantities of denominations in the vending machine
-     * 
-     * @param denomination
-     * @param quantity
-     */
-    public void addCash(int denomination, int quantity) {
-        int index = denominations.indexOf(denomination);
-        if (index != -1) {
-            int currentQuantity = quantities.get(index);
-            quantities.set(index, currentQuantity + quantity);
-        }
-    }
 
     /**
      * returns change to the user
@@ -86,43 +73,7 @@ public class Cash {
         return totalCash;
     }
 
-    /**
-     * allows the user to refill the amount of money inside the vending machine for
-     * maintenance
-     * 
-     * @param denomination
-     * @param quantity
-     */
-    public void replenishMoney(int denomination, int quantity) {
-        int index = denominations.indexOf(denomination);
-        if (index != -1) {
-            int currentQuantity = quantities.get(index);
-            int remainingQuantity = Math.min(currentQuantity + quantity, 10);
-            quantities.set(index, remainingQuantity);
-            System.out.println("Money replenished successfully.");
-        } else {
-            System.out.println("Invalid denomination.");
-        }
-    }
 
-    /**
-     * prints quantity of each denomination
-     * 
-     */
-    public void printCashSummary() {
-        for (int i = 0; i < denominations.size(); i++) {
-            System.out.println("Denomination: PHP " + denominations.get(i) + " Quantity: " + quantities.get(i));
-        }
-    }
-
-    /**
-     * to change the list of denominations
-     * 
-     * @param denominations
-     */
-    public void setDenominations(ArrayList<Integer> denominations) {
-        this.denominations = denominations;
-    }
 
     /**
      * to change the quantity of a denomination
